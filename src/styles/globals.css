@@ -4,4 +4,7 @@
 
 body {
   @apply bg-primaryBackground font-sans;
+  display: flex;
+  justify-content: center;
+  padding-top: 6rem;
 }
