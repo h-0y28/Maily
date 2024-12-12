@@ -2,14 +2,6 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../../utils/firebase";
 
 const LoginButton = () => {
-  // const handleLogin = async () => {
-  //   try {
-  //     await signInWithPopup(auth, provider);
-  //     alert("로그인 성공!");
-  //   } catch (error) {
-  //     console.error("로그인 실패:", error);
-  //   }
-  // };
   const handleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
