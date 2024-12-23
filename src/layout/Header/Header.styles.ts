@@ -6,7 +6,8 @@ export const HeaderWrapper = styled.header`
   justify-content: space-between;
   align-items: center;
   margin: 1rem 15rem;
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   border-bottom: 2px solid ${theme.colors.primaryBrown};
 `;
 
@@ -59,7 +60,18 @@ export const DiaryMenuItem = styled.div`
 `;
 
 export const LogoutButton = styled.button`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: transparent;
+  color: ${theme.colors.primaryRed};
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+`;
+
+export const LoginButton = styled.button`
+  font-size: 1.2rem;
+  font-weight: 600;
   background-color: transparent;
   color: ${theme.colors.primaryRed};
   border: none;
