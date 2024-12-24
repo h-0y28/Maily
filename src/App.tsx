@@ -18,8 +18,8 @@ const App = () => {
         {/* 공통 레이아웃 적용 페이지 */}
         <Route path="/" element={<Layout />}>
           {/* 메인 페이지 */}
-          <Route index element={<Home />} />
-          <Route path="intro" element={<Intro />} />
+          <Route index element={<Intro />} />
+          <Route path="/home" element={<Home />} />
 
           {/* 다이어리 관련 페이지 */}
           <Route path="write" element={<Write />} />
