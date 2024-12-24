@@ -2,8 +2,9 @@ import * as S from "./Header.styles";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MailyLogo from "../../assets/MailyLogo.svg";
-import { onAuthStateChanged, signInWithPopup, User } from "firebase/auth";
-import { auth, provider } from "../../utils/firebase";
+import { onAuthStateChanged, User } from "firebase/auth";
+import { auth } from "../../components/auth/utils/firebase";
+import { handleLogin } from "../../components/auth/utils/authFunctions";
 
 const Header = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -30,16 +31,6 @@ const Header = () => {
 
   const handleDiaryLeave = () => {
     setIsDiaryMenuOpen(false);
-  };
-
-  const handleLogin = async () => {
-    try {
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      console.log("User logged in: ", user);
-    } catch (error) {
-      console.error("Login error: ", error);
-    }
   };
 
   return (
