@@ -1,4 +1,4 @@
-import LoginButton from "../../auth/LoginButton";
+import LoginButton from "../../auth/LoginButton/LoginButton";
 import Pattern from "../../../assets/welcomePattern.svg";
 import * as S from "./Welcome.styles";
 
