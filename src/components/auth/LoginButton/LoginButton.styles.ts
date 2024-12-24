@@ -10,6 +10,6 @@ export const ButtonContainer = styled.button`
   border: none;
   border-radius: 0.5rem;
 
-  color: ${theme.colors.primaryWhite};
+  color: ${theme.colors.primaryBackground};
   font-weight: 600;
 `;
