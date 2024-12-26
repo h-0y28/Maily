@@ -29,7 +29,7 @@ const Welcome = () => {
         <S.WelcomePhrase>당신의 매일을 기록하세요.</S.WelcomePhrase>
         {user ? (
           // 로그인 됐을 때
-          <></>
+          <S.HomeButton> 홈으로 가기</S.HomeButton>
         ) : (
           <>
             {/* 로그인 안 됐을 때 */}

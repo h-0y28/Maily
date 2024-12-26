@@ -42,3 +42,15 @@ export const LoginPhrase = styled.p`
   font-weight: 800;
   padding-bottom: 1rem;
 `;
+
+export const HomeButton = styled.button`
+  color: ${theme.colors.primaryWhite};
+  background-color: ${theme.colors.primaryBrown};
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+`;
