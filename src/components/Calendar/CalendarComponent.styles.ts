@@ -6,7 +6,7 @@ export const CalendarContainer = styled.div`
 `;
 
 export const CalendarHeader = styled.div`
-  display: flex;
+  display: flwex;
   justify-content: space-between;
   margin-bottom: 10px;
 `;
