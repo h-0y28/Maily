@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import * as S from "./NotFound.styles";
 
 const NotFound = () => {
   const navigate = useNavigate();
@@ -8,17 +9,11 @@ const NotFound = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-primaryBackground">
-      <h1 className="text-4xl font-bold text-primaryRed mb-6">
-        ⚠️ 404 - 페이지를 찾을 수 없습니다!
-      </h1>
-      <button
-        onClick={handleNavigateHome}
-        className="px-4 py-2 bg-primaryBrown text-white rounded hover:bg-primaryNavy transition"
-      >
-        홈으로 돌아가기
-      </button>
-    </div>
+    <S.NotFoundContainer>
+      <S.State>404</S.State>
+      <S.Description>페이지를 찾을 수 없습니다.</S.Description>
+      <S.Button onClick={handleNavigateHome}>홈으로 돌아가기 →</S.Button>
+    </S.NotFoundContainer>
   );
 };
 
