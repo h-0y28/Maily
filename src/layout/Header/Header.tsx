@@ -3,13 +3,14 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MailyLogo from "../../assets/MailyLogo.svg";
 import { onAuthStateChanged, User } from "firebase/auth";
-import { auth } from "../../components/auth/utils/firebase";
-import { handleLogin } from "../../components/auth/utils/authFunctions";
+import { auth } from "../../components/auth/utils/firebaseConfig";
+import useAuth from "../../components/auth/utils/authFunctions";
 
 const Header = () => {
   const [user, setUser] = useState<User | null>(null);
   const navigate = useNavigate();
   const [isDiaryMenuOpen, setIsDiaryMenuOpen] = useState(false);
+  const { login, logout } = useAuth();
 
   // 로그인 상태 추적
   useEffect(() => {
@@ -35,7 +36,13 @@ const Header = () => {
 
   return (
     <S.HeaderWrapper>
-      <S.Logo src={MailyLogo} alt="logo" onClick={() => navigate("/")} />
+      {user ? (
+        // 로그인 됐을 때
+        <S.Logo src={MailyLogo} alt="logo" onClick={() => navigate("/home")} />
+      ) : (
+        // 로그인 안 됐을 때
+        <S.Logo src={MailyLogo} alt="logo" onClick={() => navigate("/")} />
+      )}
       <S.Nav>
         {/* 로그인 됐을 때 */}
         {user ? (
@@ -60,13 +67,11 @@ const Header = () => {
               )}
             </S.NavItem>
             <S.NavItem onClick={() => navigate("/profile")}>프로필</S.NavItem>
-            <S.LogoutButton onClick={() => auth.signOut()}>
-              로그아웃
-            </S.LogoutButton>
+            <S.LogoutButton onClick={logout}>로그아웃</S.LogoutButton>
           </>
         ) : (
           // 로그인 안 됐을 때
-          <S.LoginButton onClick={handleLogin}>로그인</S.LoginButton>
+          <S.LoginButton onClick={login}>로그인</S.LoginButton>
         )}
       </S.Nav>
     </S.HeaderWrapper>
