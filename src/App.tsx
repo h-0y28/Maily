@@ -22,9 +22,9 @@ const App = () => {
 
           {/* 다이어리 관련 페이지 */}
           <Route path="calendar" element={<Calendar />} />
-          <Route path="diary" element={<Diary />} />
+          <Route path="diary/:date" element={<Diary />} />
           <Route path="write" element={<Write />} />
-          <Route path="edit/:id" element={<Edit />} />
+          <Route path="edit/:date" element={<Edit />} />
 
           {/* 기타 페이지 */}
           <Route path="pick" element={<Pick />} />
