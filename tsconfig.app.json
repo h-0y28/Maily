@@ -22,5 +22,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "src/pages/Calendar/.styles.ts"]
+  "include": ["src", "src/pages/CalendarPage/.styles.ts"]
 }
