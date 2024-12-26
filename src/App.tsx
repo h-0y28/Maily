@@ -8,7 +8,7 @@ import Pick from "./pages/Pick";
 import Profile from "./pages/Profile";
 import Layout from "./layout/Layout";
 import Diary from "./pages/Diary";
-import Calendar from "./pages/Calendar";
+import Calendar from "./pages/CalendarPage";
 
 const App = () => {
   return (
