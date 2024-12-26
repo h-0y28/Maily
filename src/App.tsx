@@ -1,15 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DiaryMonth from "./pages/DiaryMonth/DiaryMonth";
 import NotFound from "./pages/NotFound/NotFound";
-import Detail from "./pages/Detail";
 import Home from "./pages/Home";
 import Intro from "./pages/Intro";
 import Write from "./pages/Write";
-import DiaryYear from "./pages/DiaryYear";
 import Edit from "./pages/Edit";
 import Pick from "./pages/Pick";
 import Profile from "./pages/Profile";
 import Layout from "./layout/Layout";
+import Diary from "./pages/Diary";
+import Calendar from "./pages/Calendar";
 
 const App = () => {
   return (
@@ -22,10 +21,9 @@ const App = () => {
           <Route path="/home" element={<Home />} />
 
           {/* 다이어리 관련 페이지 */}
+          <Route path="calendar" element={<Calendar />} />
+          <Route path="diary" element={<Diary />} />
           <Route path="write" element={<Write />} />
-          <Route path="diaryMonth" element={<DiaryMonth />} />
-          <Route path="diaryYear" element={<DiaryYear />} />
-          <Route path="detail/:id" element={<Detail />} />
           <Route path="edit/:id" element={<Edit />} />
 
           {/* 기타 페이지 */}
