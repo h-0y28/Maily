@@ -10,6 +10,7 @@ export const FooterContainer = styled.footer`
   padding-bottom: 6rem;
   border-top: 2px solid ${theme.colors.primaryRed};
   color: ${theme.colors.primaryBrown};
+  background-color: ${theme.colors.primaryBackground};
 `;
 
 export const SectionWrapper = styled.div`
