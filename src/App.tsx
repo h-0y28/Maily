@@ -2,13 +2,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound/NotFound";
 import Home from "./pages/Home";
 import Intro from "./pages/Intro";
-import Write from "./pages/Write";
-import Edit from "./pages/Edit";
 import Pick from "./pages/Pick";
 import Profile from "./pages/Profile";
 import Layout from "./layout/Layout";
-import Diary from "./pages/Diary";
 import Calendar from "./pages/CalendarPage";
+import DiaryPage from "./pages/DiaryPage";
+import CreateDiaryPage from "./pages/CreateDiaryPage/CreateDiaryPags";
+import EditDiaryPage from "./pages/EditDiaryPage";
 
 const App = () => {
   return (
@@ -22,9 +22,9 @@ const App = () => {
 
           {/* 다이어리 관련 페이지 */}
           <Route path="calendar" element={<Calendar />} />
-          <Route path="diary/:date" element={<Diary />} />
-          <Route path="write" element={<Write />} />
-          <Route path="edit/:date" element={<Edit />} />
+          <Route path="/diary/:date" element={<DiaryPage />} />
+          <Route path="/diary/create/:date" element={<CreateDiaryPage />} />
+          <Route path="/diary/edit/:id" element={<EditDiaryPage />} />
 
           {/* 기타 페이지 */}
           <Route path="pick" element={<Pick />} />
