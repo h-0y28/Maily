@@ -46,7 +46,7 @@ export const DayOfWeek = styled.div<{ index: number }>`
     index === 0
       ? theme.colors.primaryRed
       : index === 6
-      ? theme.colors.primaryNavy
+      ? theme.colors.primaryBlue
       : "black"};
 `;
 
