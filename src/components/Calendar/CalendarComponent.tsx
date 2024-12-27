@@ -8,13 +8,10 @@ import {
   subMonths,
 } from "date-fns";
 import { useNavigate } from "react-router-dom";
-import {
-  CalendarContainer,
-  CalendarHeader,
-  CalendarBody,
-  DayOfWeek,
-  DayCell,
-} from "./CalendarComponent.styles";
+import * as S from "./CalendarComponent.styles";
+
+import LeftArrow from "../../assets/LeftArrow.png";
+import RightArrow from "../../assets/RightArrow.png";
 
 export default function CalendarComponent() {
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
@@ -43,18 +40,27 @@ export default function CalendarComponent() {
   };
 
   return (
-    <CalendarContainer>
-      <CalendarHeader>
-        <button onClick={goToPreviousMonth}>{"<"}</button>
-        <span>{format(selectedDate, "yyyy년 MM월")}</span>
-        <button onClick={goToNextMonth}>{">"}</button>
-      </CalendarHeader>
-      <CalendarBody>
-        {["일", "월", "화", "수", "목", "금", "토"].map((day) => (
-          <DayOfWeek key={day}>{day}</DayOfWeek>
+    <S.CalendarContainer>
+      <S.CalendarHeader>
+        <S.ArrowButton
+          src={LeftArrow}
+          onClick={goToPreviousMonth}
+        ></S.ArrowButton>
+        <S.YearMonth>{format(selectedDate, "yyyy년 MM월")}</S.YearMonth>
+        <S.ArrowButton src={RightArrow} onClick={goToNextMonth}></S.ArrowButton>
+      </S.CalendarHeader>
+
+      <S.DayOfWeekWrapper>
+        {["일", "월", "화", "수", "목", "금", "토"].map((day, index) => (
+          <S.DayOfWeek key={day} index={index}>
+            {day}
+          </S.DayOfWeek>
         ))}
+      </S.DayOfWeekWrapper>
+
+      <S.CalendarBody>
         {daysInMonth.map((day) => (
-          <DayCell
+          <S.DayCell
             key={day.toString()}
             isSelected={
               format(day, "yyyy-MM-dd") === format(selectedDate, "yyyy-MM-dd")
@@ -62,9 +68,9 @@ export default function CalendarComponent() {
             onClick={() => handleDateClick(day)}
           >
             {format(day, "d")}
-          </DayCell>
+          </S.DayCell>
         ))}
-      </CalendarBody>
-    </CalendarContainer>
+      </S.CalendarBody>
+    </S.CalendarContainer>
   );
 }
