@@ -12,4 +12,6 @@ export const ButtonContainer = styled.button`
 
   color: ${theme.colors.primaryBackground};
   font-weight: 600;
+
+  cursor: pointer;
 `;
