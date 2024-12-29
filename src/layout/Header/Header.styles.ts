@@ -54,8 +54,24 @@ export const DiaryMenuItem = styled.div`
   cursor: pointer;
   border-bottom: 1px solid ${theme.colors.primaryBrown};
 
+  cursor: pointer;
+  position: relative;
+
   &:hover {
-    font-weight: 800;
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: ${theme.colors.primaryRed};
+    transition: width 0.3s ease-in-out;
   }
 `;
 
