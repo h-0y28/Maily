@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import LockIcon from "../../../assets/LockIcon.png";
 import CalendarComponent from "../../Calendar";
 import DiaryCard from "../../Diary/DiaryCard";
 import * as S from "./Quick.styles";
 
 const Quick = () => {
+  const navigate = useNavigate();
+
   return (
     <S.QuickContainer>
       {/* Lock Section */}
@@ -15,7 +18,11 @@ const Quick = () => {
       </S.Section>
 
       {/* Diary Section */}
-      <S.Section>
+      <S.Section
+        onClick={() =>
+          navigate(`/diary/create/${new Date().toISOString().split("T")[0]}`)
+        }
+      >
         <DiaryCard
           title="내 생일, 나를 위한 하루"
           date="2024.08.02"
@@ -25,7 +32,11 @@ const Quick = () => {
       </S.Section>
 
       {/* Calendar Section */}
-      <S.Section>
+      <S.Section
+        onClick={() =>
+          navigate(`/diary/${new Date().toISOString().split("T")[0]}`)
+        }
+      >
         <S.Card>
           <CalendarComponent />
         </S.Card>
