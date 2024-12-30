@@ -51,7 +51,7 @@ export const DiaryMenu = styled.div`
 export const DiaryMenuItem = styled.div`
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   border-bottom: 1px solid ${theme.colors.primaryBrown};
 
@@ -77,7 +77,7 @@ export const DiaryMenuItem = styled.div`
 `;
 
 export const LogoutButton = styled.button`
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   background-color: transparent;
   color: ${theme.colors.primaryRed};
