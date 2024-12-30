@@ -66,12 +66,12 @@ const EditDiaryPage = () => {
 
   return (
     <DiaryForm
+      header="수정하기"
       title={title}
       content={content}
       onTitleChange={(e) => setTitle(e.target.value)}
       onContentChange={(e) => setContent(e.target.value)}
       onSubmit={updateDiary}
-      buttonText="수정 완료"
     />
   );
 };

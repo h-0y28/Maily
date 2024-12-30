@@ -8,21 +8,21 @@ import EditPattern from "../../../assets/EditPattern.png";
 import { Container } from "../../../styles/commonStyles";
 
 interface DiaryFormProps {
+  header: string;
   title: string;
   content: string;
   onTitleChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onContentChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
   onSubmit: () => void;
-  buttonText: string;
 }
 
 const DiaryForm = ({
+  header,
   title,
   content,
   onTitleChange,
   onContentChange,
   onSubmit,
-  buttonText,
 }: DiaryFormProps) => {
   const navigate = useNavigate();
   const contentRef = useRef<HTMLTextAreaElement>(null);
@@ -41,7 +41,7 @@ const DiaryForm = ({
 
   return (
     <S.FormContainer>
-      {buttonText === "작성 완료" ? (
+      {header === "당신의 추억을 기록해보세요!" ? (
         <S.Pattern src={CreatePattern} />
       ) : (
         <S.Pattern src={EditPattern} />
@@ -50,7 +50,7 @@ const DiaryForm = ({
       <Container>
         <S.Header>
           <S.BackArrow onClick={goBack} src={BackArrow} />
-          <S.Description>당신의 추억을 기록해보세요!</S.Description>
+          <S.Description>{header}</S.Description>
         </S.Header>
 
         {/* 입력 폼 */}
@@ -70,7 +70,7 @@ const DiaryForm = ({
           />
         </S.FormWrapper>
         <S.ButtonContainer>
-          <S.Button onClick={onSubmit}>{buttonText}</S.Button>
+          <S.Button onClick={onSubmit}>완료</S.Button>
         </S.ButtonContainer>
       </Container>
     </S.FormContainer>

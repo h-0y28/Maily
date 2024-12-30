@@ -39,12 +39,12 @@ const CreateDiaryPage = () => {
 
   return (
     <DiaryForm
+      header="당신의 추억을 기록해보세요!"
       title={title}
       content={content}
       onTitleChange={(e) => setTitle(e.target.value)}
       onContentChange={(e) => setContent(e.target.value)}
       onSubmit={saveDiary}
-      buttonText="작성 완료"
     />
   );
 };
