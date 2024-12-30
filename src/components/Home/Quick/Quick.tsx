@@ -5,7 +5,12 @@ import * as S from "./Quick.styles";
 const Quick = () => {
   return (
     <S.QuickContainer>
-      <S.LockSection></S.LockSection>
+      <S.LockSection>
+        <CalendarComponent />
+        <CalendarComponent />
+        <CalendarComponent />
+        <CalendarComponent />
+      </S.LockSection>
 
       <S.DiarySection>
         <DiaryCard
