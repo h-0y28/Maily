@@ -7,7 +7,7 @@ import Profile from "./pages/Profile";
 import Layout from "./layout/Layout";
 import Calendar from "./pages/CalendarPage";
 import DiaryPage from "./pages/DiaryPage";
-import CreateDiaryPage from "./pages/CreateDiaryPage/CreateDiaryPags";
+import CreateDiaryPage from "./pages/CreateDiaryPage/CreateDiaryPage";
 import EditDiaryPage from "./pages/EditDiaryPage";
 
 const App = () => {
