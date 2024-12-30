@@ -26,6 +26,7 @@ export const NavItem = styled.div`
   font-size: 1.5rem;
   cursor: pointer;
   font-weight: 600;
+  transition: font-weight 0.3s ease-in-out;
 
   &:hover {
     font-weight: 800;
