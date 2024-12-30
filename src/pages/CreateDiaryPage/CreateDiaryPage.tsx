@@ -13,8 +13,12 @@ const CreateDiaryPage = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
+  // 다이어리 저장 함수
   const saveDiary = async () => {
-    if (!user || !date) return;
+    if (!user || !date) {
+      console.error("User or date is missing!");
+      return;
+    }
 
     try {
       const diaryRef = doc(db, "diaries", `${user.uid}_${date}`);
