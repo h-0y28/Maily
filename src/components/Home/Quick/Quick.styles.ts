@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../../styles/theme";
 
 export const QuickContainer = styled.div`
   display: flex;
@@ -6,25 +7,47 @@ export const QuickContainer = styled.div`
   width: 100%;
 `;
 
-export const NamalSection = styled.div`
+export const Section = styled.div`
   flex: 1;
-  padding: 1rem;
+  min-height: 22rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
-export const LockSection = styled.div`
-  flex: 2;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  padding: 1rem;
+export const Card = styled.div<{ isTransparent?: boolean }>`
+  width: 32rem;
+  height: 22rem;
+
+  /* 배경색: 조건에 따라 변경 */
+  background-color: ${({ isTransparent }) =>
+    isTransparent ? "rgba(0, 0, 0, 0.5)" : theme.colors.primaryWhite};
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
 `;
 
-export const DiarySection = styled.div`
-  flex: 3;
-  padding: 1rem;
+export const Lock = styled.img`
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
 `;
 
 export const Title = styled.h1`
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  color: ${({ theme }) => theme.colors.primaryBrown};
+  font-weight: bold;
+  margin-top: 1rem;
+  text-align: center;
 `;
