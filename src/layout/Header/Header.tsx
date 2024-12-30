@@ -54,13 +54,27 @@ const Header = () => {
               다이어리
               {isDiaryMenuOpen && (
                 <S.DiaryMenu>
-                  <S.DiaryMenuItem onClick={() => navigate("/write")}>
+                  <S.DiaryMenuItem
+                    onClick={() =>
+                      navigate(
+                        `/diary/create/${
+                          new Date().toISOString().split("T")[0]
+                        }`
+                      )
+                    }
+                  >
                     다이어리 작성하기
                   </S.DiaryMenuItem>
-                  <S.DiaryMenuItem onClick={() => navigate("/diaryMonth")}>
+                  <S.DiaryMenuItem
+                    onClick={() =>
+                      navigate(
+                        `/diary/${new Date().toISOString().split("T")[0]}`
+                      )
+                    }
+                  >
                     기본 다이어리 보기
                   </S.DiaryMenuItem>
-                  <S.DiaryMenuItem onClick={() => navigate("/pick ")}>
+                  <S.DiaryMenuItem onClick={() => navigate("/pick")}>
                     Pick 다이어리 보기
                   </S.DiaryMenuItem>
                 </S.DiaryMenu>
