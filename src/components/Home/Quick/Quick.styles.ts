@@ -6,7 +6,6 @@ export const QuickContainer = styled.div`
   gap: 2rem;
   width: 100%;
   padding-top: 7rem;
-  padding-bottom: 7rem;
 `;
 
 export const Section = styled.div`
