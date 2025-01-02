@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound/NotFound";
 import Home from "./pages/Home";
 import Intro from "./pages/Intro";
-import Pick from "./pages/Pick";
+import PickPage from "./pages/PickPage";
 import Profile from "./pages/Profile";
 import Layout from "./layout/Layout";
 import Calendar from "./pages/CalendarPage";
@@ -27,7 +27,7 @@ const App = () => {
           <Route path="/diary/edit/:id" element={<EditDiaryPage />} />
 
           {/* 기타 페이지 */}
-          <Route path="pick" element={<Pick />} />
+          <Route path="pick" element={<PickPage />} />
           <Route path="profile" element={<Profile />} />
         </Route>
 
