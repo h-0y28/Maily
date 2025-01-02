@@ -32,7 +32,7 @@ export default function CalendarComponent() {
     <S.CalendarContainer>
       <S.CalendarHeader>
         <S.ArrowButton src={LeftArrow} onClick={goToPreviousMonth} />
-        <S.YearMonth>{format(selectedDate, "yyyy년 MM월")}</S.YearMonth>
+        <S.YearMonth>{format(selectedDate, "yyyy.MM.dd")}</S.YearMonth>
         <S.ArrowButton src={RightArrow} onClick={goToNextMonth} />
       </S.CalendarHeader>
 
