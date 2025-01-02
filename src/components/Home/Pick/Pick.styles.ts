@@ -4,7 +4,6 @@ import { theme } from "../../../styles/theme";
 export const PickContainer = styled.div`
   background-color: ${theme.colors.primaryBrown};
   padding-top: 3rem;
-  padding-left: 5.25rem;
   padding-bottom: 6rem;
 `;
 
@@ -12,7 +11,7 @@ export const Header = styled.div`
   display: flex;
 
   background-color: ${theme.colors.primaryBackground};
-  padding: 3rem 1rem;
+  padding: 3rem 6.25rem;
 `;
 
 export const Title = styled.h1`
@@ -23,6 +22,7 @@ export const Title = styled.h1`
 
 export const InfoBox = styled.div`
   display: flex;
+  align-items: center;
 
   margin-left: 2.5rem;
   font-size: 1rem;

@@ -9,9 +9,11 @@ const Pick = () => {
       <S.Header>
         <S.Title>PICK 다이어리</S.Title>
         <S.InfoBox>
-          <S.Description>PICK 한 추억들을 한눈에 볼 수 있어요!</S.Description>|
+          <S.Description>
+            PICK 한 추억들을 한눈에 볼 수 있어요! |{" "}
+          </S.Description>
           {/* 임시로 홈으로가게 해놓음 */}
-          <S.EditButton onClick={() => navigate("/")}>수정하기 </S.EditButton>
+          <S.EditButton onClick={() => navigate("/")}> 수정하기</S.EditButton>
         </S.InfoBox>
       </S.Header>
 
