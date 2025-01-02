@@ -9,6 +9,7 @@ const breakpoints = {
 
 export const CalendarContainer = styled.div`
   width: 100%;
+  height: fit-content;
   margin: 0 auto;
   padding: 1rem;
 `;
@@ -41,6 +42,8 @@ export const CalendarBody = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 1rem;
+
+  background-color: ${theme.colors.primaryYellow};
 
   @media (max-width: ${breakpoints.tablet}) {
     grid-template-columns: repeat(7, 1fr);
@@ -81,24 +84,32 @@ export const DayOfWeek = styled.div<{ index: number }>`
   }
 `;
 
-export const DayCell = styled.div<{ isSelected: boolean }>`
+export const DayCell = styled.div<{
+  isSelected: boolean;
+  isToday: boolean;
+}>`
   text-align: center;
   padding: 10px;
   cursor: pointer;
-  background-color: ${({ isSelected }) =>
-    isSelected ? "#f39c12" : "transparent"};
   border-radius: 8px;
   transition: background-color 0.2s ease;
 
+  background-color: ${({ isSelected, isToday }) =>
+    isToday
+      ? theme.colors.primaryRed
+      : isSelected
+      ? theme.colors.primaryWhite
+      : "transparent"};
+
+  color: ${({ isSelected, isToday }) =>
+    isToday
+      ? theme.colors.primaryWhite
+      : isSelected
+      ? theme.colors.primaryRed
+      : theme.colors.primaryBlack};
+
   &:hover {
-    background-color: #f39c12;
-  }
-
-  @media (max-width: ${breakpoints.tablet}) {
-    padding: 8px;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    padding: 6px;
+    background-color: ${theme.colors.primaryBrown};
+    color: ${theme.colors.primaryWhite};
   }
 `;
