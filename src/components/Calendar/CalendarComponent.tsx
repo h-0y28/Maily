@@ -38,7 +38,7 @@ export default function CalendarComponent() {
       {/* Calendar Header */}
       <S.CalendarHeader>
         <S.ArrowButton src={LeftArrow} onClick={handlePreviousMonth} />
-        <S.YearMonth>{format(currentMonth, "yyyy.MM.dd")}</S.YearMonth>
+        <S.YearMonth>{format(selectedDate, "yyyy.MM.dd")}</S.YearMonth>
         <S.ArrowButton src={RightArrow} onClick={handleNextMonth} />
       </S.CalendarHeader>
 
