@@ -1,4 +1,5 @@
 import CalendarComponent from "../../Calendar";
+import DiaryComponent from "../../Diary/DiaryComponent";
 import * as S from "./Example.styles";
 
 const Example = () => {
@@ -6,6 +7,7 @@ const Example = () => {
     <S.ExampleContainer>
       <S.Pattern>
         <CalendarComponent />
+        <DiaryComponent />
       </S.Pattern>
     </S.ExampleContainer>
   );
