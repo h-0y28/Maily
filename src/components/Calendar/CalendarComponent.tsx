@@ -19,8 +19,8 @@ export default function CalendarComponent() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const highlightedDate = location.pathname.split("/diary/")[1];
-  const selectedDate = highlightedDate ? new Date(highlightedDate) : null;
+  const highlightedDate = location.pathname.split("/diary/")[1] || "2024-08-02";
+  const selectedDate = new Date(highlightedDate);
 
   const daysInMonth = eachDayOfInterval({
     start: startOfMonth(currentMonth),
