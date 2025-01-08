@@ -7,8 +7,9 @@ const Example = () => {
     <S.ExampleContainer>
       <S.Pattern>
         <CalendarComponent />
-        <DiaryComponent />
       </S.Pattern>
+
+      <DiaryComponent />
     </S.ExampleContainer>
   );
 };

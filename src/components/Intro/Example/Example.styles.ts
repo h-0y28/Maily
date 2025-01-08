@@ -5,6 +5,10 @@ export const ExampleContainer = styled.div`
   display: flex;
   color: ${theme.colors.primaryBlack};
   height: 50vh;
+
+  & > * {
+    flex: 1;
+  }
 `;
 
 export const Pattern = styled.div`
