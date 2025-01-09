@@ -8,8 +8,9 @@ const Example = () => {
       <S.Pattern>
         <CalendarComponent />
       </S.Pattern>
-
-      <DiaryComponent />
+      <S.DiaryWrapper>
+        <DiaryComponent />
+      </S.DiaryWrapper>
     </S.ExampleContainer>
   );
 };
