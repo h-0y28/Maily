@@ -81,6 +81,7 @@ export const Content = styled.p`
   font-weight: 600;
   margin-bottom: 2rem;
   color: #555;
+  white-space: pre-line;
 `;
 
 export const LoadingText = styled.p`
