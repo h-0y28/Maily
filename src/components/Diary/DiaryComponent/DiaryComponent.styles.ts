@@ -93,3 +93,13 @@ export const NoDiaryText = styled.p`
   font-size: 1.2rem;
   color: red;
 `;
+
+export const ImgWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const Img = styled.img`
+  flex: 1;
+  height: 19.5rem;
+`;

@@ -6,11 +6,15 @@ import { db } from "../../auth/utils/firebaseConfig";
 import Loading from "../../Loading";
 import * as S from "./DiaryComponent.styles";
 
+import exampleImg from "../../../assets/exampleImg.jpg";
+import exampleImg2 from "../../../assets/exampleImg2.jpg";
+
 export interface Diary {
   id: string;
   title: string;
   date: string;
   content: string;
+  imageUrl?: string;
 }
 
 export default function DiaryComponent() {
@@ -72,6 +76,7 @@ export default function DiaryComponent() {
           title: diaryData.title,
           date: diaryData.date,
           content: diaryData.content,
+          imageUrl: diaryData.imageUrl,
         });
       } else {
         setDiary(null);
@@ -125,6 +130,16 @@ export default function DiaryComponent() {
       </S.Header>
 
       <S.Content>{diary.content}</S.Content>
+      <S.ImgWrapper>
+        {diary.id === "example" ? (
+          <>
+            <S.Img src={exampleImg} alt="example img" />
+            <S.Img src={exampleImg2} alt="example img2" />
+          </>
+        ) : (
+          <S.Img src={diary.imageUrl || ""} alt={diary.title} />
+        )}
+      </S.ImgWrapper>
     </S.Container>
   );
 }
