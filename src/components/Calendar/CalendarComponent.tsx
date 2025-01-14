@@ -44,7 +44,7 @@ export default function CalendarComponent() {
 
       {/* Day of the Week Header */}
       <S.DayOfWeekWrapper>
-        {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day, index) => (
+        {["일", "월", "화", "수", "목", "금", "토"].map((day, index) => (
           <S.DayOfWeek key={index} index={index}>
             {day}
           </S.DayOfWeek>
