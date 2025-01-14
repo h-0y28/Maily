@@ -4,8 +4,11 @@ import LoginButton from "../../auth/LoginButton";
 import * as S from "./Welcome.styles";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "../../auth/utils/firebaseConfig";
+import { useNavigate } from "react-router-dom";
 
 const Welcome = () => {
+  const navgatie = useNavigate();
+
   const [user, setUser] = useState<User | null>(null);
 
   // 로그인 상태 추적
@@ -29,7 +32,10 @@ const Welcome = () => {
         <S.WelcomePhrase>당신의 매일을 기록하세요.</S.WelcomePhrase>
         {user ? (
           // 로그인 됐을 때
-          <S.HomeButton> 홈으로 가기</S.HomeButton>
+          <S.HomeButton onClick={() => navgatie("/home")}>
+            {" "}
+            홈으로 가기
+          </S.HomeButton>
         ) : (
           <>
             {/* 로그인 안 됐을 때 */}
