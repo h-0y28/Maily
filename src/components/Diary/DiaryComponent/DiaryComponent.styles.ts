@@ -1,12 +1,26 @@
 import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+  }
+`;
 
 export const ButtonContainer = styled.div`
   display: flex;
   gap: 0.5rem;
-  justify-content: end;
+  justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+  }
 `;
 
 export const EditButton = styled.button`
@@ -34,6 +48,10 @@ export const EditButton = styled.button`
     height: 1.5px;
     background-color: ${theme.colors.primaryBlue};
     transition: width 0.3s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
   }
 `;
 
@@ -63,18 +81,39 @@ export const DeleteButton = styled.button`
     background-color: ${theme.colors.primaryRed};
     transition: width 0.3s ease-in-out;
   }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
 
-export const Header = styled.div``;
+export const Header = styled.div`
+  margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 0.5rem;
+  }
+`;
 
 export const Title = styled.h1`
   font-size: 1.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
   color: #333;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
-export const Date = styled.p``;
+export const Date = styled.p`
+  font-size: 1rem;
+  color: #666;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+`;
 
 export const Content = styled.p`
   font-size: 1rem;
@@ -82,24 +121,31 @@ export const Content = styled.p`
   margin-bottom: 2rem;
   color: #555;
   white-space: pre-line;
-`;
 
-export const LoadingText = styled.p`
-  font-size: 1.2rem;
-  color: #888;
-`;
-
-export const NoDiaryText = styled.p`
-  font-size: 1.2rem;
-  color: red;
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 export const ImgWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Img = styled.img`
-  flex: 1;
-  height: 19.5rem;
+  width: 100%;
+  height: 20rem;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 `;
