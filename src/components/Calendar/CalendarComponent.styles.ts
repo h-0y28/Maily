@@ -42,7 +42,6 @@ export const CalendarBody = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 1rem;
-
   background-color: ${theme.colors.primaryYellow};
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -71,28 +70,53 @@ export const DayOfWeekWrapper = styled.div`
 
 export const DayOfWeek = styled.div<{ index: number }>`
   text-align: center;
-  font-weight: bold;
+  font-weight: 600;
   color: ${({ index }) =>
     index === 0
       ? theme.colors.primaryRed
       : index === 6
       ? theme.colors.primaryBlue
-      : "black"};
+      : theme.colors.primaryBrown};
 
   @media (max-width: ${breakpoints.mobile}) {
     font-size: 1.2rem;
   }
 `;
 
-export const DayCell = styled.div<{
-  isSelected: boolean;
-  isToday: boolean;
-}>`
+export const DayWithTitle = styled.div`
+  display: flex;
+  justify-content: space-between;
   text-align: center;
   padding: 10px;
   cursor: pointer;
-  border-radius: 8px;
   transition: background-color 0.2s ease;
+  height: 10rem;
+  border: 1px solid ${theme.colors.primaryBrown};
+  border-radius: 3px;
+
+  &:hover {
+    background-color: ${theme.colors.primaryWhite};
+  }
+`;
+
+export const DayTitle = styled.h1`
+  font-size: 1.5rem;
+  color: ${theme.colors.primaryBrown};
+  margin-top: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+export const DayNumber = styled.p<{
+  isSelected: boolean;
+  isToday: boolean;
+}>`
+  border-radius: 100%;
+  padding: 3px;
+  height: 2.5rem;
+  width: 2.5rem;
+  font-size: 1.5rem;
 
   background-color: ${({ isSelected, isToday }) =>
     isToday
@@ -107,9 +131,4 @@ export const DayCell = styled.div<{
       : isSelected
       ? theme.colors.primaryRed
       : theme.colors.primaryBlack};
-
-  &:hover {
-    background-color: ${theme.colors.primaryBrown};
-    color: ${theme.colors.primaryWhite};
-  }
 `;
