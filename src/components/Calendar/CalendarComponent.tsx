@@ -98,29 +98,28 @@ export default function CalendarComponent() {
               const title = diaryTitles[dateString] || "";
 
               return (
-                <S.DayCell onClick={() => handleDateClick(day)}>
-                  <S.DayWithTitle>
-                    <S.DayNumber
-                      key={day.toString()}
-                      isSelected={
-                        selectedDate
-                          ? format(day, "yyyy-MM-dd") ===
-                            format(selectedDate, "yyyy-MM-dd")
-                          : false
-                      }
-                      isToday={isToday(day)}
-                    >
-                      {format(day, "d")}
-                    </S.DayNumber>
-                    {title ? (
-                      <S.DayTitle>{title}</S.DayTitle>
-                    ) : (
-                      <S.DayTitle style={{ visibility: "hidden" }}>
-                        No Title
-                      </S.DayTitle>
-                    )}
-                  </S.DayWithTitle>
-                </S.DayCell>
+                <S.DayWithTitle onClick={() => handleDateClick(day)}>
+                  {title ? (
+                    <S.DayTitle>{title}</S.DayTitle>
+                  ) : (
+                    <S.DayTitle style={{ visibility: "hidden" }}>
+                      No Title
+                    </S.DayTitle>
+                  )}
+
+                  <S.DayNumber
+                    key={day.toString()}
+                    isSelected={
+                      selectedDate
+                        ? format(day, "yyyy-MM-dd") ===
+                          format(selectedDate, "yyyy-MM-dd")
+                        : false
+                    }
+                    isToday={isToday(day)}
+                  >
+                    {format(day, "d")}
+                  </S.DayNumber>
+                </S.DayWithTitle>
               );
             })}
           </S.CalendarBody>
