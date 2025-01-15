@@ -17,7 +17,7 @@ export const LoadingWrapper = styled.div`
 
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
 `;
 
 export const Spinner = styled.div`
