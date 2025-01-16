@@ -8,8 +8,6 @@ const breakpoints = {
 };
 
 export const CalendarContainer = styled.div`
-  width: 100%;
-  height: fit-content;
   margin: 0 auto;
   padding: 1rem;
 `;
@@ -23,8 +21,8 @@ export const CalendarHeader = styled.div`
 
 export const ArrowButton = styled.img`
   cursor: pointer;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: auto;
 `;
 
 export const YearMonth = styled.h1`
@@ -90,7 +88,8 @@ export const DayWithTitle = styled.div`
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  height: 10rem;
+  width: 7rem;
+  height: 9rem;
   border: 1px solid ${theme.colors.primaryBrown};
   border-radius: 3px;
 
