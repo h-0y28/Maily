@@ -4,11 +4,10 @@ import { theme } from "../../styles/theme";
 export const DiaryPageContainer = styled.div`
   display: grid;
   grid-template-columns: 2fr 2fr;
-  gap: 9rem;
+  gap: 8rem;
 `;
 
 // Empty styels
-
 export const EmptyContainer = styled.div`
   display: flex;
   flex-direction: column;
