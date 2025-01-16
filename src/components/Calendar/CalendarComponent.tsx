@@ -18,16 +18,17 @@ import useAuth from "../auth/utils/authFunctions";
 import Loading from "../Loading";
 
 export default function CalendarComponent() {
-  const [currentMonth, setCurrentMonth] = useState(new Date());
-  const [diaryTitles, setDiaryTitles] = useState<Record<string, string>>({});
-  const [loading, setLoading] = useState(false);
-
-  const navigate = useNavigate();
   const location = useLocation();
+  const navigate = useNavigate();
   const { user } = useAuth();
 
   const highlightedDate = location.pathname.split("/diary/")[1] || "2024-08-02";
   const selectedDate = new Date(highlightedDate);
+
+  const [currentMonth, setCurrentMonth] = useState(new Date(selectedDate));
+
+  const [diaryTitles, setDiaryTitles] = useState<Record<string, string>>({});
+  const [loading, setLoading] = useState(false);
 
   const daysInMonth = eachDayOfInterval({
     start: startOfMonth(currentMonth),
@@ -79,7 +80,7 @@ export default function CalendarComponent() {
           {/* Calendar Header */}
           <S.CalendarHeader>
             <S.ArrowButton src={LeftArrow} onClick={handlePreviousMonth} />
-            <S.YearMonth>{format(currentMonth, "yyyy.MM")}</S.YearMonth>
+            <S.YearMonth>{format(currentMonth, "yyyy.MM.dd")}</S.YearMonth>
             <S.ArrowButton src={RightArrow} onClick={handleNextMonth} />
           </S.CalendarHeader>
 
