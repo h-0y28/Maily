@@ -39,7 +39,6 @@ export const YearMonth = styled.h1`
 export const CalendarBody = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 1rem;
   background-color: ${theme.colors.primaryYellow};
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -90,11 +89,19 @@ export const DayWithTitle = styled.div`
   transition: background-color 0.2s ease;
   width: 7rem;
   height: 9rem;
-  border: 1px solid ${theme.colors.primaryBrown};
-  border-radius: 3px;
+  border: 2px solid ${theme.colors.primaryBrown};
+  border-top: none;
 
   &:hover {
-    background-color: ${theme.colors.primaryWhite};
+    background-color: #ffe9be;
+  }
+
+  &:nth-child(7n) {
+    border-right: none;
+  }
+
+  &:nth-child(n) {
+    border-left: none;
   }
 `;
 
