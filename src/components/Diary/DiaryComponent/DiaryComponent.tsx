@@ -7,7 +7,7 @@ import Loading from "../../Loading";
 import * as S from "./DiaryComponent.styles";
 
 import exampleImg from "../../../assets/exampleImg.jpg";
-import exampleImg2 from "../../../assets/exampleImg2.jpg";
+import exampleImg2 from "../../../assets/exampleImg2.png";
 
 export interface Diary {
   id: string;
