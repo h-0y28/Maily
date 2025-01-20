@@ -120,8 +120,8 @@ export const DayNumber = styled.p<{
 }>`
   border-radius: 100%;
   padding: 3px;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: fit-content;
+  width: 3rem;
   font-size: 1.5rem;
 
   background-color: ${({ isSelected, isToday }) =>
