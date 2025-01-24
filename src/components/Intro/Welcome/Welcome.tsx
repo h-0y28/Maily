@@ -33,7 +33,6 @@ const Welcome = () => {
         {user ? (
           // 로그인 됐을 때
           <S.HomeButton onClick={() => navgatie("/home")}>
-            {" "}
             홈으로 가기
           </S.HomeButton>
         ) : (

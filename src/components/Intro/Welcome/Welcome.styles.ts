@@ -55,4 +55,10 @@ export const HomeButton = styled.button`
   padding-right: 1rem;
 
   cursor: pointer;
+
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: ${theme.colors.primaryRed};
+  }
 `;
