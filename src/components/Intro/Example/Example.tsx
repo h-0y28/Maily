@@ -1,8 +1,8 @@
 // import CalendarComponent from "../../Calendar";
 // import DiaryComponent from "../../Diary/DiaryComponent";
 
-import ExampleDiary from "../../../assets/exampleDiary.png";
-import ExampleCalender from "../../../assets/exampleCalender.png";
+import ExampleDiary from "../../../assets/ExampleDiary.png";
+import ExampleCalender from "../../../assets/ExampleCalender.png";
 
 import * as S from "./Example.styles";
 
