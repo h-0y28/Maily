@@ -117,16 +117,18 @@ export default function DiaryComponent() {
 
   return (
     <S.Container>
-      <S.ButtonContainer>
-        <S.EditButton onClick={() => navigate(`/diary/edit/${diary.id}`)}>
-          수정하기
-        </S.EditButton>
-        |<S.DeleteButton onClick={deleteDiary}>삭제하기</S.DeleteButton>
-      </S.ButtonContainer>
-
       <S.Header>
-        <S.Title>{diary.title}</S.Title>
-        <S.Date>{diary.date}</S.Date>
+        <S.TitleAndDate>
+          <S.Title>{diary.title}</S.Title>
+          <S.Date>{diary.date}</S.Date>
+        </S.TitleAndDate>
+
+        <S.ButtonContainer>
+          <S.EditButton onClick={() => navigate(`/diary/edit/${diary.id}`)}>
+            수정
+          </S.EditButton>
+          |<S.DeleteButton onClick={deleteDiary}>삭제</S.DeleteButton>
+        </S.ButtonContainer>
       </S.Header>
 
       <S.Content>{diary.content}</S.Content>

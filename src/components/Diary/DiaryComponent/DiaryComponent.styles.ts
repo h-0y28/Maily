@@ -3,7 +3,7 @@ import { theme } from "../../../styles/theme";
 
 export const Container = styled.div`
   padding: 1rem;
-  max-width: 1200px;
+  width: 45rem;
   margin: 0 auto;
 
   @media (max-width: 768px) {
@@ -15,6 +15,7 @@ export const ButtonContainer = styled.div`
   display: flex;
   gap: 0.5rem;
   justify-content: flex-end;
+  align-items: start;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -88,11 +89,19 @@ export const DeleteButton = styled.button`
 `;
 
 export const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 1rem;
 
   @media (max-width: 768px) {
     margin-bottom: 0.5rem;
   }
+`;
+
+export const TitleAndDate = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const Title = styled.h1`
