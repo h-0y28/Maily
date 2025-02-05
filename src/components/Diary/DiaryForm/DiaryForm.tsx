@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import BackArrow from "../../../assets/BackArrow.png";
 import CreatePattern from "../../../assets/CreatePattern.png";
 import EditPattern from "../../../assets/EditPattern.png";
+import CloseButton from "../../../assets/closeButton.png"; // 날씨, 기분 박스 닫기 버튼
 
 // 날씨 아이콘
 import WeatehrsIcon from "../../../assets/Weathers.png";
@@ -120,8 +121,15 @@ const DiaryForm = ({
               onChange={onTitleChange}
               placeholder="제목을 입력해주세요."
             />
+
             {/* 날씨 & 기분 아이콘 */}
             <S.IconContainer>
+              <S.ExplainContainer>
+                <S.Question>오늘의 기분과 날씨는 어떠셨나요?</S.Question>
+                <S.Invitation>
+                  이모티콘을 클릭해 현재를 표현해보세요!
+                </S.Invitation>
+              </S.ExplainContainer>
               <S.Icon
                 onClick={() => toggleBox("mood")}
                 src={
@@ -173,10 +181,11 @@ const DiaryForm = ({
         {/* 기분 선택 상자 */}
         {visibleBox === "mood" && (
           <S.SelectionBox>
-            <S.CloseButton onClick={() => setVisibleBox(null)}>
-              닫기
-            </S.CloseButton>
             <S.SelectionLabel>오늘의 기분</S.SelectionLabel>
+            <S.CloseButton
+              src={CloseButton}
+              onClick={() => setVisibleBox(null)}
+            ></S.CloseButton>
             <S.IconGrid>
               {moodIcons.map((icon) => (
                 <S.IconItem
