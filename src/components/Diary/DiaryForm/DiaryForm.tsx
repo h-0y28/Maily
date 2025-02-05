@@ -9,20 +9,25 @@ import EditPattern from "../../../assets/EditPattern.png";
 // 날씨 아이콘
 import WeatehrsIcon from "../../../assets/Weathers.png";
 import SunnyIcon from "../../../assets/SunnyIcon.png";
+import CloudyInTheSunIcon from "../../../assets/CloudyInTheSunIcon.png";
 import CloudyIcon from "../../../assets/CloudyIcon.png";
 import RainyIcon from "../../../assets/RainyIcon.png";
-import SnowyIcon from "../../../assets/SnowyIcon.png";
 import WindyIcon from "../../../assets/WindyIcon.png";
+import SnowyIcon from "../../../assets/SnowyIcon.png";
 
 // 기분 아이콘
 import FeelingsIcon from "../../../assets/Feelings.png";
+import GoodIcon from "../../../assets/GoodIcon.png";
 import HappyIcon from "../../../assets/HappyIcon.png";
+import NiceIcon from "../../../assets/NiceIcon.png";
+import LoveIcon from "../../../assets/LoveIcon.png";
 import SadIcon from "../../../assets/SadIcon.png";
+import BadIcon from "../../../assets/BadIcon.png";
 import AngryIcon from "../../../assets/AngryIcon.png";
 import SickIcon from "../../../assets/SickIcon.png";
-import LoveIcon from "../../../assets/LoveIcon.png";
 import SleepingIcon from "../../../assets/SleepingIcon.png";
 import MoneyIcon from "../../../assets/MoneyIcon.png";
+import HotIcon from "../../../assets/HotIcon.png";
 
 import { Container } from "../../../styles/commonStyles";
 
@@ -37,6 +42,7 @@ interface DiaryFormProps {
 
 const weatherIcons = [
   { src: SunnyIcon, value: "sunny" },
+  { src: CloudyInTheSunIcon, value: "cloudyInTheSun" },
   { src: CloudyIcon, value: "cloudy" },
   { src: RainyIcon, value: "rainy" },
   { src: SnowyIcon, value: "snowy" },
@@ -44,13 +50,17 @@ const weatherIcons = [
 ];
 
 const moodIcons = [
+  { src: GoodIcon, value: "goob" },
   { src: HappyIcon, value: "happy" },
+  { src: NiceIcon, value: "nice" },
   { src: SadIcon, value: "sad" },
+  { src: BadIcon, value: "bad" },
   { src: AngryIcon, value: "angry" },
   { src: SickIcon, value: "sick" },
   { src: LoveIcon, value: "love" },
   { src: SleepingIcon, value: "sleeping" },
   { src: MoneyIcon, value: "money" },
+  { src: HotIcon, value: "hot" },
 ];
 
 const DiaryForm = ({
