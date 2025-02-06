@@ -145,6 +145,7 @@ const DiaryForm = ({
                     ? weatherIcons.find((icon) => icon.value === weather)?.src
                     : WeathersIcon
                 }
+                alt="날씨 아이콘"
               />
             </S.IconContainer>
           </S.TitleAndIcons>
@@ -160,10 +161,10 @@ const DiaryForm = ({
         {/* 날씨 선택 상자 */}
         {visibleBox === "weather" && (
           <S.SelectionBox>
+            <S.SelectionLabel src={WeathersIcon}></S.SelectionLabel>
             <S.CloseButton onClick={() => setVisibleBox(null)}>
               닫기
             </S.CloseButton>
-            <S.SelectionLabel>오늘의 날씨</S.SelectionLabel>
             <S.IconGrid>
               {weatherIcons.map((icon) => (
                 <S.IconItem
@@ -181,7 +182,7 @@ const DiaryForm = ({
         {/* 기분 선택 상자 */}
         {visibleBox === "mood" && (
           <S.SelectionBox>
-            <S.SelectionLabel>오늘의 기분</S.SelectionLabel>
+            <S.SelectionLabel src={FeelingsIcon}></S.SelectionLabel>
             <S.CloseButton
               src={CloseButton}
               onClick={() => setVisibleBox(null)}
