@@ -8,7 +8,7 @@ import EditPattern from "../../../assets/EditPattern.png";
 import CloseButton from "../../../assets/closeButton.png"; // 날씨, 기분 박스 닫기 버튼
 
 // 날씨 아이콘
-import WeatehrsIcon from "../../../assets/Weathers.png";
+import WeathersIcon from "../../../assets/Weathers.png";
 import SunnyIcon from "../../../assets/SunnyIcon.png";
 import CloudyInTheSunIcon from "../../../assets/CloudyInTheSunIcon.png";
 import CloudyIcon from "../../../assets/CloudyIcon.png";
@@ -143,7 +143,7 @@ const DiaryForm = ({
                 src={
                   weather
                     ? weatherIcons.find((icon) => icon.value === weather)?.src
-                    : WeatehrsIcon
+                    : WeathersIcon
                 }
               />
             </S.IconContainer>
