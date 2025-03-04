@@ -26,12 +26,15 @@ export default function CalendarComponent() {
   const selectedDate = new Date(highlightedDate);
 
   const [currentMonth, setCurrentMonth] = useState(new Date(selectedDate));
-
   const [diaryTitles, setDiaryTitles] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
 
+  const firstDayOfMonth = startOfMonth(currentMonth);
+  const firstDayOfWeek = firstDayOfMonth.getDay();
+  const emptyDays = Array.from({ length: firstDayOfWeek }, (_, i) => i);
+
   const daysInMonth = eachDayOfInterval({
-    start: startOfMonth(currentMonth),
+    start: firstDayOfMonth,
     end: endOfMonth(currentMonth),
   });
 
@@ -94,12 +97,21 @@ export default function CalendarComponent() {
           </S.DayOfWeekWrapper>
 
           <S.CalendarBody>
+            {/* 빈 칸 렌더링 */}
+            {emptyDays.map((_, index) => (
+              <S.DayWithTitle key={`empty-${index}`} />
+            ))}
+
+            {/* 날짜 렌더링 */}
             {daysInMonth.map((day: Date) => {
               const dateString = format(day, "yyyy-MM-dd");
               const title = diaryTitles[dateString] || "";
 
               return (
-                <S.DayWithTitle onClick={() => handleDateClick(day)}>
+                <S.DayWithTitle
+                  key={dateString}
+                  onClick={() => handleDateClick(day)}
+                >
                   {title ? (
                     <S.DayTitle>{title}</S.DayTitle>
                   ) : (
@@ -109,7 +121,6 @@ export default function CalendarComponent() {
                   )}
 
                   <S.DayNumber
-                    key={day.toString()}
                     isSelected={
                       selectedDate
                         ? format(day, "yyyy-MM-dd") ===
