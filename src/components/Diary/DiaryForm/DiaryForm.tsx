@@ -51,7 +51,7 @@ const weatherIcons = [
 ];
 
 const moodIcons = [
-  { src: GoodIcon, value: "goob" },
+  { src: GoodIcon, value: "good" },
   { src: HappyIcon, value: "happy" },
   { src: NiceIcon, value: "nice" },
   { src: SadIcon, value: "sad" },
@@ -162,9 +162,10 @@ const DiaryForm = ({
         {visibleBox === "weather" && (
           <S.SelectionBox>
             <S.SelectionLabel src={WeathersIcon}></S.SelectionLabel>
-            <S.CloseButton onClick={() => setVisibleBox(null)}>
-              닫기
-            </S.CloseButton>
+            <S.CloseButton
+              onClick={() => setVisibleBox(null)}
+              src={CloseButton}
+            />
             <S.IconGrid>
               {weatherIcons.map((icon) => (
                 <S.IconItem
@@ -184,9 +185,9 @@ const DiaryForm = ({
           <S.SelectionBox>
             <S.SelectionLabel src={FeelingsIcon}></S.SelectionLabel>
             <S.CloseButton
-              src={CloseButton}
               onClick={() => setVisibleBox(null)}
-            ></S.CloseButton>
+              src={CloseButton}
+            />
             <S.IconGrid>
               {moodIcons.map((icon) => (
                 <S.IconItem
