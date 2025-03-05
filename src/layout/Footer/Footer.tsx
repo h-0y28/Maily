@@ -18,7 +18,7 @@ const Footer = () => {
     },
     {
       title: "Quick Link",
-      content: ["FAQ"],
+      content: [{ text: "FAQ", url: "/faqPage" }],
     },
     {
       title: "Contact",
