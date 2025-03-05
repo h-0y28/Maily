@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import LockIcon from "../../../assets/LockIcon.png";
-import CalendarComponent from "../../Calendar";
+// import CalendarComponent from "../../Calendar";
 import DiaryCard from "../../Diary/DiaryCard";
 import * as S from "./Quick.styles";
 import { Container } from "../../../styles/commonStyles";
@@ -39,9 +39,7 @@ const Quick = () => {
             navigate(`/diary/${new Date().toISOString().split("T")[0]}`)
           }
         >
-          <S.Card>
-            <CalendarComponent />
-          </S.Card>
+          <S.Card>{/* <CalendarComponent /> */}</S.Card>
           <S.Title>내 다이어리 보러 가기 →</S.Title>
         </S.Section>
       </S.QuickContainer>
