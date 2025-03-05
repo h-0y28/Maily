@@ -1,6 +1,6 @@
-import { ChangeEvent, useRef, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as S from "./DiaryForm.styles";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import BackArrow from "../../../assets/BackArrow.png";
 import CreatePattern from "../../../assets/CreatePattern.png";
@@ -31,15 +31,10 @@ import MoneyIcon from "../../../assets/MoneyIcon.png";
 import HotIcon from "../../../assets/HotIcon.png";
 
 import { Container } from "../../../styles/commonStyles";
-
-interface DiaryFormProps {
-  header: string;
-  title: string;
-  content: string;
-  onTitleChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  onContentChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
-  onSubmit: (weather: string, mood: string) => void;
-}
+import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
+import useAuth from "../../auth/utils/authFunctions";
+import { db } from "../../auth/utils/firebaseConfig";
+import Loading from "../../Loading";
 
 const weatherIcons = [
   { src: SunnyIcon, value: "sunny" },
@@ -64,20 +59,44 @@ const moodIcons = [
   { src: HotIcon, value: "hot" },
 ];
 
-const DiaryForm = ({
-  header,
-  title,
-  content,
-  onTitleChange,
-  onContentChange,
-  onSubmit,
-}: DiaryFormProps) => {
+const DiaryForm = () => {
   const navigate = useNavigate();
-  const contentRef = useRef<HTMLTextAreaElement>(null);
+  const { user } = useAuth();
+  const { date } = useParams<{ date: string }>();
 
+  const [loading, setLoading] = useState(true);
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
   const [weather, setWeather] = useState<string>("");
   const [mood, setMood] = useState<string>("");
   const [visibleBox, setVisibleBox] = useState<"weather" | "mood" | null>(null);
+  const [isEditing, setIsEditing] = useState(false);
+
+  const contentRef = useRef<HTMLTextAreaElement>(null);
+
+  const fetchDiary = async () => {
+    if (!user || !date) return;
+
+    const diaryRef = doc(db, "diaries", `${user.uid}_${date}`);
+    const diarySnap = await getDoc(diaryRef);
+
+    if (diarySnap.exists()) {
+      const diaryData = diarySnap.data();
+      setTitle(diaryData.title);
+      setContent(diaryData.content);
+      setWeather(diaryData.weather);
+      setMood(diaryData.mood);
+      setIsEditing(true);
+    } else {
+      setIsEditing(false);
+    }
+
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchDiary();
+  }, [date, user]);
 
   useEffect(() => {
     if (contentRef.current) {
@@ -98,18 +117,44 @@ const DiaryForm = ({
     setVisibleBox(null);
   };
 
+  const handleSubmit = async () => {
+    const today = new Date().toISOString().split("T")[0];
+
+    const diaryRef = doc(db, "diaries", `${user?.uid}_${today}`);
+
+    if (isEditing) {
+      await updateDoc(diaryRef, {
+        title,
+        content,
+        weather,
+        mood,
+      });
+    } else {
+      await setDoc(diaryRef, {
+        title,
+        content,
+        weather,
+        mood,
+        userId: user?.uid,
+      });
+    }
+
+    navigate(`/diary/${today}`);
+  };
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <S.FormContainer>
-      <S.Pattern
-        src={
-          header === "당신의 추억을 기록해보세요!" ? CreatePattern : EditPattern
-        }
-      />
-
+      <S.Pattern src={isEditing ? EditPattern : CreatePattern} />
       <Container>
         <S.Header>
           <S.BackArrow onClick={goBack} src={BackArrow} />
-          <S.Description>{header}</S.Description>
+          <S.Description>
+            {isEditing ? "다이어리 수정" : "당신의 추억을 기록해보세요!"}
+          </S.Description>
         </S.Header>
 
         {/* 입력 폼 */}
@@ -118,7 +163,7 @@ const DiaryForm = ({
             <S.Title
               type="text"
               value={title}
-              onChange={onTitleChange}
+              onChange={(e) => setTitle(e.target.value)}
               placeholder="제목을 입력해주세요."
             />
 
@@ -152,7 +197,7 @@ const DiaryForm = ({
           <S.Content
             ref={contentRef}
             value={content}
-            onChange={onContentChange}
+            onChange={(e) => setContent(e.target.value)}
             placeholder="내용을 입력해주세요."
             rows={20}
           />
@@ -203,7 +248,7 @@ const DiaryForm = ({
         )}
 
         <S.ButtonContainer>
-          <S.Button onClick={() => onSubmit(weather, mood)}>완료</S.Button>
+          <S.Button onClick={handleSubmit}>완료</S.Button>
         </S.ButtonContainer>
       </Container>
     </S.FormContainer>
