@@ -3,12 +3,30 @@ import { theme } from "../../../styles/theme";
 
 export const Container = styled.div`
   padding: 1rem;
-  width: 45rem;
+  width: 100%;
   margin: 0 auto;
+  padding: 5rem;
 
   @media (max-width: 768px) {
     padding: 0.5rem;
   }
+`;
+
+export const Header = styled.div`
+  display: flex;
+  margin-top: 5rem;
+  margin-bottom: 4.25rem;
+  width: 100%;
+`;
+
+export const BackArrow = styled.img`
+  cursor: pointer;
+`;
+
+export const Date = styled.h1`
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 300;
 `;
 
 export const ButtonContainer = styled.div`
@@ -88,24 +106,17 @@ export const DeleteButton = styled.button`
   }
 `;
 
-export const Header = styled.div`
+export const MainContetn = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
 
-  @media (max-width: 768px) {
-    margin-bottom: 0.5rem;
-  }
-`;
+  padding-bottom: 1.25rem;
 
-export const TitleAndDate = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  border-bottom: 1px solid ${theme.colors.primaryBrown};
 `;
 
 export const Title = styled.h1`
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 800;
   margin-bottom: 1rem;
   color: #333;
@@ -115,17 +126,8 @@ export const Title = styled.h1`
   }
 `;
 
-export const Date = styled.p`
-  font-size: 1rem;
-  color: #666;
-
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
-  }
-`;
-
 export const Content = styled.p`
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 2rem;
   color: #555;
@@ -137,24 +139,24 @@ export const Content = styled.p`
   }
 `;
 
-export const ImgWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+// export const ImgWrapper = styled.div`
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+//   gap: 1.5rem;
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
+//   @media (max-width: 768px) {
+//     grid-template-columns: 1fr;
+//   }
+// `;
 
-export const Img = styled.img`
-  width: 100%;
-  height: 20rem;
-  border-radius: 10px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+// export const Img = styled.img`
+//   width: 100%;
+//   height: 20rem;
+//   border-radius: 10px;
+//   object-fit: cover;
+//   transition: transform 0.5s ease;
 
-  &:hover {
-    transform: scale(1.02);
-  }
-`;
+//   &:hover {
+//     transform: scale(1.02);
+//   }
+// `;

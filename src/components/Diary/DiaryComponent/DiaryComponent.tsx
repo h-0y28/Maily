@@ -6,8 +6,9 @@ import { db } from "../../auth/utils/firebaseConfig";
 import Loading from "../../Loading";
 import * as S from "./DiaryComponent.styles";
 
-import exampleImg from "../../../assets/exampleImg.jpg";
-import exampleImg2 from "../../../assets/exampleImg2.png";
+// import exampleImg from "../../../assets/exampleImg.jpg";
+// import exampleImg2 from "../../../assets/exampleImg2.png";
+import BackArrow from "../../../assets/BackArrow.png";
 
 export interface Diary {
   id: string;
@@ -116,32 +117,38 @@ export default function DiaryComponent() {
   }
 
   return (
+    // <S.Container>
+
+    //   <S.ImgWrapper>
+    //     {diary.id === "example" ? (
+    //       <>
+    //         <S.Img src={exampleImg} alt="example img" />
+    //         <S.Img src={exampleImg2} alt="example img2" />
+    //       </>
+    //     ) : (
+    //       <S.Img src={diary.imageUrl || ""} alt={diary.title} />
+    //     )}
+    //   </S.ImgWrapper>
+    // </S.Container>
     <S.Container>
       <S.Header>
-        <S.TitleAndDate>
-          <S.Title>{diary.title}</S.Title>
-          <S.Date>{diary.date}</S.Date>
-        </S.TitleAndDate>
-
-        <S.ButtonContainer>
-          <S.EditButton onClick={() => navigate(`/diary/edit/${diary.id}`)}>
-            수정
-          </S.EditButton>
-          |<S.DeleteButton onClick={deleteDiary}>삭제</S.DeleteButton>
-        </S.ButtonContainer>
+        <S.BackArrow src={BackArrow} />
+        <S.Date>{diary.date}</S.Date>
       </S.Header>
 
+      <S.ButtonContainer>
+        <S.EditButton onClick={() => navigate(`/diary/edit/${diary.id}`)}>
+          수정
+        </S.EditButton>
+        |<S.DeleteButton onClick={deleteDiary}>삭제</S.DeleteButton>
+      </S.ButtonContainer>
+
+      <S.MainContetn>
+        <S.Title>{diary.title}</S.Title>
+        {/* 날씨 + 기분 */}
+      </S.MainContetn>
+
       <S.Content>{diary.content}</S.Content>
-      <S.ImgWrapper>
-        {diary.id === "example" ? (
-          <>
-            <S.Img src={exampleImg} alt="example img" />
-            <S.Img src={exampleImg2} alt="example img2" />
-          </>
-        ) : (
-          <S.Img src={diary.imageUrl || ""} alt={diary.title} />
-        )}
-      </S.ImgWrapper>
     </S.Container>
   );
 }
