@@ -1,11 +1,12 @@
-import Pick from "../../components/Home/Pick";
-import Quick from "../../components/Home/Quick";
+// import Pick from "../../components/Home/Pick";
+// import Quick from "../../components/Home/Quick";
 
 export default function Home() {
   return (
     <>
-      <Quick />
-      <Pick />
+      {/* <Quick />
+      <Pick /> */}
+      home
     </>
   );
 }
