@@ -6,7 +6,6 @@ export const Container = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 5rem;
-
   @media (max-width: 768px) {
     padding: 0.5rem;
   }
@@ -14,8 +13,6 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   display: flex;
-  margin-top: 5rem;
-  margin-bottom: 4.25rem;
   width: 100%;
 `;
 
@@ -120,6 +117,7 @@ export const Title = styled.h1`
   font-weight: 800;
   margin-bottom: 1rem;
   color: #333;
+  text-align: center;
 
   @media (max-width: 768px) {
     font-size: 1.2rem;
