@@ -5,10 +5,10 @@ export const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem 15rem;
+  margin: 0rem 15rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  border-bottom: 2px solid ${theme.colors.primaryBrown};
+  border-bottom: 1px solid ${theme.colors.primaryBrown};
 `;
 
 export const Logo = styled.img`
