@@ -31,7 +31,7 @@ export const BackArrow = styled.img`
 `;
 
 export const Description = styled.h1`
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 600;
   color: ${theme.colors.primaryBrown};
   flex-grow: 1;
@@ -50,16 +50,14 @@ export const FormWrapper = styled.div`
 export const TitleAndIcons = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem;
-  padding-bottom: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding: 0.5rem 0rem;
   border-bottom: 2px solid ${theme.colors.primaryBrown};
 `;
 
 export const Title = styled.input`
   outline: none;
   border: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   background-color: transparent;
   color: ${theme.colors.primaryBlack};
@@ -71,13 +69,13 @@ export const Title = styled.input`
 
 export const Content = styled.textarea`
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   margin-bottom: 1rem;
   outline: none;
   border: none;
   resize: none;
   overflow: hidden;
-  font-size: 1.5rem;
+  font-size: 1rem;
   background-color: transparent;
 `;
 
