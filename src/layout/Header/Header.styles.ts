@@ -23,14 +23,14 @@ export const Nav = styled.nav`
 
 export const NavItem = styled.div`
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1rem;
   cursor: pointer;
-  font-weight: 600;
-  transition: font-weight 0.3s ease-in-out;
+  font-weight: 500;
+  /* transition: font-weight 0.3s ease-in-out;
 
   &:hover {
     font-weight: 800;
-  }
+  } */
 `;
 
 export const DiaryMenu = styled.div`
@@ -77,7 +77,7 @@ export const DiaryMenuItem = styled.div`
 `;
 
 export const LogoutButton = styled.button`
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   background-color: transparent;
   color: ${theme.colors.primaryRed};
@@ -87,7 +87,7 @@ export const LogoutButton = styled.button`
 `;
 
 export const LoginButton = styled.button`
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   background-color: transparent;
   color: ${theme.colors.primaryRed};
