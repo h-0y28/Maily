@@ -30,4 +30,11 @@ export const Content = styled.div`
   font-size: 1.3rem;
   font-weight: 300;
   line-height: 1.8;
+  display: flex;
+`;
+
+export const TextHightLight = styled.p`
+  text-decoration-color: ${theme.colors.primaryRed};
+  text-decoration: underline;
+  display: flex;
 `;
