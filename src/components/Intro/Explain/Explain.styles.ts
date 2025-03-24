@@ -34,7 +34,6 @@ export const Content = styled.div`
 `;
 
 export const TextHightLight = styled.p`
-  text-decoration-color: ${theme.colors.primaryRed};
   text-decoration: underline;
   display: flex;
 `;
