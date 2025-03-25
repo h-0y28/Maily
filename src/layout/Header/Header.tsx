@@ -47,7 +47,7 @@ const Header = () => {
         {/* 로그인 됐을 때 */}
         {user ? (
           <>
-            <S.NavItem
+            {/* <S.NavItem
               onMouseEnter={handleDiaryHover}
               onMouseLeave={handleDiaryLeave}
             >
@@ -79,6 +79,25 @@ const Header = () => {
                   </S.DiaryMenuItem>
                 </S.DiaryMenu>
               )}
+            </S.NavItem> */}
+            <S.NavItem
+              onClick={() =>
+                navigate(
+                  `/diary/create/${new Date().toISOString().split("T")[0]}`
+                )
+              }
+            >
+              다이어리 작성하기
+            </S.NavItem>
+            <S.NavItem
+              onClick={() =>
+                navigate(`/diary/${new Date().toISOString().split("T")[0]}`)
+              }
+            >
+              기본 다이어리 보기
+            </S.NavItem>
+            <S.NavItem onClick={() => navigate("/pick")}>
+              Pick 다이어리 보기
             </S.NavItem>
             <S.NavItem onClick={() => navigate("/profile")}>프로필</S.NavItem>
             <S.LogoutButton onClick={logout}>로그아웃</S.LogoutButton>
