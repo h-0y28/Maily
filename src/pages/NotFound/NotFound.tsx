@@ -12,7 +12,7 @@ const NotFound = () => {
     <S.NotFoundContainer>
       <S.State>404</S.State>
       <S.Description>페이지를 찾을 수 없습니다.</S.Description>
-      <S.Button onClick={handleNavigateHome}>홈으로 돌아가기 →</S.Button>
+      <S.Button onClick={handleNavigateHome}>홈으로</S.Button>
     </S.NotFoundContainer>
   );
 };
