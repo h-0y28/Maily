@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound/NotFound";
-import Home from "./pages/Home";
 import Intro from "./pages/Intro";
 import PickPage from "./pages/PickPage";
 import Profile from "./pages/Profile";
@@ -19,7 +18,6 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           {/* 메인 페이지 */}
           <Route index element={<Intro />} />
-          <Route path="/home" element={<Home />} />
 
           {/* 다이어리 관련 페이지 */}
           <Route path="calendar" element={<Calendar />} />
