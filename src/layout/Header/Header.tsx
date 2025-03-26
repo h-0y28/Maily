@@ -36,13 +36,8 @@ const Header = () => {
 
   return (
     <S.HeaderWrapper>
-      {user ? (
-        // 로그인 됐을 때
-        <S.Logo src={MailyLogo} alt="logo" onClick={() => navigate("/home")} />
-      ) : (
-        // 로그인 안 됐을 때
-        <S.Logo src={MailyLogo} alt="logo" onClick={() => navigate("/")} />
-      )}
+      <S.Logo src={MailyLogo} alt="logo" onClick={() => navigate("/")} />
+
       <S.Nav>
         {/* 로그인 됐을 때 */}
         {user ? (
