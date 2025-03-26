@@ -87,18 +87,16 @@ const Header = () => {
                 )
               }
             >
-              다이어리 작성하기
+              작성
             </S.NavItem>
             <S.NavItem
               onClick={() =>
                 navigate(`/diary/${new Date().toISOString().split("T")[0]}`)
               }
             >
-              기본 다이어리 보기
+              다이어리
             </S.NavItem>
-            <S.NavItem onClick={() => navigate("/pick")}>
-              Pick 다이어리 보기
-            </S.NavItem>
+            <S.NavItem onClick={() => navigate("/pick")}>Pick</S.NavItem>
             <S.NavItem onClick={() => navigate("/profile")}>프로필</S.NavItem>
             <S.LogoutButton onClick={logout}>로그아웃</S.LogoutButton>
           </>
