@@ -9,7 +9,6 @@ import useAuth from "../../components/auth/utils/authFunctions";
 const Header = () => {
   const [user, setUser] = useState<User | null>(null);
   const navigate = useNavigate();
-  const [isDiaryMenuOpen, setIsDiaryMenuOpen] = useState(false);
   const { login, logout } = useAuth();
 
   // 로그인 상태 추적
@@ -26,14 +25,6 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
 
-  const handleDiaryHover = () => {
-    setIsDiaryMenuOpen(true);
-  };
-
-  const handleDiaryLeave = () => {
-    setIsDiaryMenuOpen(false);
-  };
-
   return (
     <S.HeaderWrapper>
       <S.Logo src={MailyLogo} alt="logo" onClick={() => navigate("/")} />
@@ -42,39 +33,6 @@ const Header = () => {
         {/* 로그인 됐을 때 */}
         {user ? (
           <>
-            {/* <S.NavItem
-              onMouseEnter={handleDiaryHover}
-              onMouseLeave={handleDiaryLeave}
-            >
-              다이어리
-              {isDiaryMenuOpen && (
-                <S.DiaryMenu>
-                  <S.DiaryMenuItem
-                    onClick={() =>
-                      navigate(
-                        `/diary/create/${
-                          new Date().toISOString().split("T")[0]
-                        }`
-                      )
-                    }
-                  >
-                    다이어리 작성하기
-                  </S.DiaryMenuItem>
-                  <S.DiaryMenuItem
-                    onClick={() =>
-                      navigate(
-                        `/diary/${new Date().toISOString().split("T")[0]}`
-                      )
-                    }
-                  >
-                    기본 다이어리 보기
-                  </S.DiaryMenuItem>
-                  <S.DiaryMenuItem onClick={() => navigate("/pick")}>
-                    Pick 다이어리 보기
-                  </S.DiaryMenuItem>
-                </S.DiaryMenu>
-              )}
-            </S.NavItem> */}
             <S.NavItem
               onClick={() =>
                 navigate(
