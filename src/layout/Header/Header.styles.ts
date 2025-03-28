@@ -6,8 +6,7 @@ export const HeaderWrapper = styled.header`
   justify-content: space-between;
   align-items: center;
   margin: 0rem 15rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0 1rem;
   border-bottom: 1px solid ${theme.colors.primaryBrown};
 `;
 
@@ -22,47 +21,31 @@ export const Nav = styled.nav`
   height: 100%;
 `;
 
-// export const DiaryMenu = styled.div`
-//   position: absolute;
-//   width: 12rem;
-//   top: 110%;
-//   left: -50%;
-//   padding: 1.5rem;
-//   padding-top: 1rem;
-//   background-color: ${theme.colors.primaryWhite};
-//   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1);
-//   border-radius: 1rem;
-//   overflow: hidden;
-//   z-index: 10;
-//   font-weight: 600;
-// `;
-
 export const NavItem = styled.div`
-  /* padding-bottom: 0.5rem;
-  padding-top: 0.5rem; */
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  border-bottom: 1px solid ${theme.colors.primaryBrown};
+  /* border-bottom: 1px solid ${theme.colors.primaryBrown}; */
 
   cursor: pointer;
   position: relative;
 
   &:hover {
-    &::after {
+    /* &::after {
       width: 100%;
-    }
+    } */
+    font-weight: 600;
   }
 
   &::after {
-    content: "";
+    /* content: "";
     position: absolute;
     bottom: -2px;
     left: 0;
     width: 0;
     height: 1.5px;
     background-color: ${theme.colors.primaryRed};
-    transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out; */
   }
 `;
 
