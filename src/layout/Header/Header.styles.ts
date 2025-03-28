@@ -19,39 +19,29 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   gap: 20px;
+  height: 100%;
 `;
+
+// export const DiaryMenu = styled.div`
+//   position: absolute;
+//   width: 12rem;
+//   top: 110%;
+//   left: -50%;
+//   padding: 1.5rem;
+//   padding-top: 1rem;
+//   background-color: ${theme.colors.primaryWhite};
+//   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1);
+//   border-radius: 1rem;
+//   overflow: hidden;
+//   z-index: 10;
+//   font-weight: 600;
+// `;
 
 export const NavItem = styled.div`
-  position: relative;
+  /* padding-bottom: 0.5rem;
+  padding-top: 0.5rem; */
   font-size: 1rem;
-  cursor: pointer;
   font-weight: 500;
-  /* transition: font-weight 0.3s ease-in-out;
-
-  &:hover {
-    font-weight: 800;
-  } */
-`;
-
-export const DiaryMenu = styled.div`
-  position: absolute;
-  width: 12rem;
-  top: 110%;
-  left: -50%;
-  padding: 1.5rem;
-  padding-top: 1rem;
-  background-color: ${theme.colors.primaryWhite};
-  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
-  overflow: hidden;
-  z-index: 10;
-  font-weight: 600;
-`;
-
-export const DiaryMenuItem = styled.div`
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
-  font-size: 1rem;
   cursor: pointer;
   border-bottom: 1px solid ${theme.colors.primaryBrown};
 
