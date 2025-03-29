@@ -40,7 +40,7 @@ const Header = () => {
                 )
               }
             >
-              작성
+              다이어리 작성
             </S.NavItem>
             <S.NavItem
               onClick={() =>
