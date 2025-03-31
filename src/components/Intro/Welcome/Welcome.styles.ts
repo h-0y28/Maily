@@ -39,8 +39,8 @@ export const WelcomePhrase = styled.h2`
 export const LoginPhrase = styled.p`
   color: ${theme.colors.primaryBrown};
   font-size: 1.3rem;
-  font-weight: 800;
-  padding-bottom: 1rem;
+  font-weight: 600;
+  padding-bottom: 1.5rem;
 `;
 
 export const HomeButton = styled.button`
