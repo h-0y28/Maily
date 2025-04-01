@@ -15,7 +15,8 @@ const useAuth = () => {
     } catch (error) {
       console.error("Login error:", error);
     }
-    navigate("/home");
+    // navigate("/home");
+    navigate("/");
   };
 
   // 로그아웃 함수
