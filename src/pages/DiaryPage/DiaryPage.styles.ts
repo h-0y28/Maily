@@ -3,7 +3,7 @@ import { theme } from "../../styles/theme";
 
 export const DiaryPageContainer = styled.div`
   display: grid;
-  /* grid-template-columns: 2fr 2fr; */
+  grid-template-columns: 1fr 1fr;
   gap: 8rem;
 `;
 
