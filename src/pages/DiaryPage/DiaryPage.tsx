@@ -6,7 +6,7 @@ import { doc, getDoc } from "firebase/firestore";
 import useAuth from "../../components/auth/utils/authFunctions";
 import { db } from "../../components/auth/utils/firebaseConfig";
 import Loading from "../../components/Loading";
-// import CalendarComponent from "../../components/Calendar";
+import CalendarComponent from "../../components/Calendar";
 import { Container } from "../../styles/commonStyles";
 import DiaryComponent from "../../components/Diary/DiaryComponent";
 
@@ -56,7 +56,7 @@ const DiaryPage = () => {
   return (
     <Container>
       <S.DiaryPageContainer>
-        {/* <CalendarComponent /> */}
+        <CalendarComponent />
 
         {diary ? (
           <DiaryComponent />
