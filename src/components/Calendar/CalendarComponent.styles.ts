@@ -8,8 +8,13 @@ const breakpoints = {
 };
 
 export const CalendarContainer = styled.div`
-  margin: 0 auto;
-  padding: 1rem;
+  width: 100%;
+  max-width: 43.75rem;
+  min-height: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const CalendarHeader = styled.div`
@@ -17,18 +22,18 @@ export const CalendarHeader = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
+  gap: 1rem;
 `;
 
 export const ArrowButton = styled.img`
   cursor: pointer;
-  width: 1rem;
-  height: auto;
+  width: 2rem;
+  height: 2rem;
 `;
 
 export const YearMonth = styled.h1`
   font-size: 2.5rem;
   color: ${theme.colors.primaryRed};
-  padding: 0 2rem;
   text-align: center;
 
   @media (max-width: ${breakpoints.mobile}) {
@@ -38,16 +43,11 @@ export const YearMonth = styled.h1`
 
 export const CalendarBody = styled.div`
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  width: 100%;
   background-color: ${theme.colors.primaryYellow};
 
-  @media (max-width: ${breakpoints.tablet}) {
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-  }
-
   @media (max-width: ${breakpoints.mobile}) {
-    grid-template-columns: repeat(7, 1fr);
     gap: 2px;
   }
 `;
@@ -56,9 +56,9 @@ export const DayOfWeekWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   background-color: ${theme.colors.primaryWhite};
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem;
   font-size: 2rem;
+  width: 100%;
 
   @media (max-width: ${breakpoints.mobile}) {
     font-size: 1.5rem;
@@ -82,13 +82,13 @@ export const DayOfWeek = styled.div<{ index: number }>`
 
 export const DayWithTitle = styled.div`
   display: flex;
-  justify-content: space-between;
-  text-align: center;
-  padding: 10px;
+  flex-direction: column;
+  align-items: end;
+  text-align: end;
+  padding: 0.5rem;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  width: 7rem;
-  height: 9rem;
+  aspect-ratio: 1 / 1.2;
   border: 2px solid ${theme.colors.primaryBrown};
   border-top: none;
 
@@ -106,23 +106,24 @@ export const DayWithTitle = styled.div`
 `;
 
 export const DayTitle = styled.h1`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: ${theme.colors.primaryBrown};
-  margin-top: 0.5rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 90%;
+  text-align: end;
 `;
 
-export const DayNumber = styled.p<{
-  isSelected: boolean;
-  isToday: boolean;
-}>`
+export const DayNumber = styled.p<{ isSelected: boolean; isToday: boolean }>`
   border-radius: 100%;
-  padding: 3px;
-  height: fit-content;
-  width: 3rem;
-  font-size: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
 
   background-color: ${({ isSelected, isToday }) =>
     isToday

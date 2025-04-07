@@ -112,14 +112,6 @@ export default function CalendarComponent() {
                   key={dateString}
                   onClick={() => handleDateClick(day)}
                 >
-                  {title ? (
-                    <S.DayTitle>{title}</S.DayTitle>
-                  ) : (
-                    <S.DayTitle style={{ visibility: "hidden" }}>
-                      No Title
-                    </S.DayTitle>
-                  )}
-
                   <S.DayNumber
                     isSelected={
                       selectedDate
@@ -131,6 +123,13 @@ export default function CalendarComponent() {
                   >
                     {format(day, "d")}
                   </S.DayNumber>
+                  {title ? (
+                    <S.DayTitle>{title}</S.DayTitle>
+                  ) : (
+                    <S.DayTitle style={{ visibility: "hidden" }}>
+                      No Title
+                    </S.DayTitle>
+                  )}
                 </S.DayWithTitle>
               );
             })}
