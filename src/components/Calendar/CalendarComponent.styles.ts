@@ -123,7 +123,6 @@ export const DayNumber = styled.p<{ isSelected: boolean; isToday: boolean }>`
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  font-weight: bold;
 
   background-color: ${({ isSelected, isToday }) =>
     isToday
