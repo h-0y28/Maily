@@ -3,8 +3,8 @@ import * as S from "./DiaryForm.styles";
 import { useNavigate, useParams } from "react-router-dom";
 
 import BackArrow from "../../../assets/BackArrow.png";
-import CreatePattern from "../../../assets/CreatePattern.png";
-import EditPattern from "../../../assets/EditPattern.png";
+// import CreatePattern from "../../../assets/CreatePattern.png";
+// import EditPattern from "../../../assets/EditPattern.png";
 import CloseButton from "../../../assets/closeButton.png"; // 날씨, 기분 박스 닫기 버튼
 
 // 날씨 아이콘
@@ -148,7 +148,7 @@ const DiaryForm = () => {
 
   return (
     <S.FormContainer>
-      <S.Pattern src={isEditing ? EditPattern : CreatePattern} />
+      {/* <S.Pattern src={isEditing ? EditPattern : CreatePattern} /> */}
       <Container>
         <S.Header>
           <S.BackArrow onClick={goBack} src={BackArrow} />
