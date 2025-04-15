@@ -5,6 +5,7 @@ export const DiaryPageContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8rem;
+  padding-top: 6rem;
 `;
 
 // Empty styels
