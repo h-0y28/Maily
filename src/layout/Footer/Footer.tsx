@@ -27,7 +27,7 @@ const Footer = () => {
           text: "Email: fedevluna@gmail.com",
           url: "mailto:fedevluna@gmail.com",
         },
-        { text: "GitHub", url: "https://github.com/Maily" },
+        { text: "GitHub: Maily", url: "https://github.com/h-0y28/Maily" },
       ],
     },
   ];
