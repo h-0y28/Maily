@@ -59,6 +59,7 @@ export const DayOfWeekWrapper = styled.div`
   padding: 0.5rem;
   font-size: 2rem;
   width: 100%;
+  border-bottom: solid 2px ${theme.colors.primaryBrown};
 
   @media (max-width: ${breakpoints.mobile}) {
     font-size: 1.5rem;
