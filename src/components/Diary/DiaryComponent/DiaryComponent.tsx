@@ -6,7 +6,7 @@ import { db } from "../../auth/utils/firebaseConfig";
 import Loading from "../../Loading";
 import * as S from "./DiaryComponent.styles";
 
-import BackArrow from "../../../assets/BackArrow.png";
+// import BackArrow from "../../../assets/BackArrow.png";
 
 export interface Diary {
   id: string;
@@ -85,9 +85,9 @@ export default function DiaryComponent() {
 
   return (
     <S.Container>
-      <S.Header>
+      {/* <S.Header>
         <S.BackArrow src={BackArrow} />
-      </S.Header>
+      </S.Header> */}
       <S.Title>{diary.title}</S.Title>
 
       <S.ButtonContainer>
