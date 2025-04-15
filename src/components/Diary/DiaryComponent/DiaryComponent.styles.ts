@@ -114,7 +114,7 @@ export const MainContetn = styled.div`
 
 export const Title = styled.h1`
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 600;
   margin-bottom: 1rem;
   color: #333;
   text-align: center;
@@ -127,13 +127,13 @@ export const Title = styled.h1`
 export const Content = styled.p`
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  padding: 1.5rem 0rem;
   color: #555;
   white-space: pre-line;
 
   @media (max-width: 768px) {
     font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    padding: 1rem 0rem;
   }
 `;
 
