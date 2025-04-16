@@ -107,7 +107,9 @@ export const DayWithTitle = styled.div`
 `;
 
 export const DayTitle = styled.h1`
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+
   color: ${theme.colors.primaryBrown};
   white-space: nowrap;
   overflow: hidden;
@@ -122,6 +124,7 @@ export const DayNumber = styled.p<{ isSelected: boolean; isToday: boolean }>`
   height: 2rem;
   display: flex;
   align-items: center;
+  text-align: end;
   justify-content: center;
   font-size: 1.2rem;
 
