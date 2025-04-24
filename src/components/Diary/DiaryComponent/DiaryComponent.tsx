@@ -5,7 +5,6 @@ import useAuth from "../../auth/utils/authFunctions";
 import { db } from "../../auth/utils/firebaseConfig";
 import Loading from "../../Loading";
 import * as S from "./DiaryComponent.styles";
-// import BackArrow from "../../../assets/BackArrow.png";
 
 // 날씨 아이콘
 import WeathersIcon from "../../../assets/Weathers.png";
@@ -134,9 +133,6 @@ export default function DiaryComponent() {
 
   return (
     <S.Container>
-      {/* <S.Header>
-        <S.BackArrow src={BackArrow} />
-      </S.Header> */}
       <S.Title>{diary.title}</S.Title>
 
       <S.ButtonContainer>
