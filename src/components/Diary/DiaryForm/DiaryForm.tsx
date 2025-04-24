@@ -128,6 +128,7 @@ const DiaryForm = () => {
         content,
         weather,
         mood,
+        date,
       });
     } else {
       await setDoc(diaryRef, {
@@ -136,6 +137,7 @@ const DiaryForm = () => {
         weather,
         mood,
         userId: user?.uid,
+        date,
       });
     }
 
