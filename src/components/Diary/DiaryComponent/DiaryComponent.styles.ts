@@ -26,6 +26,17 @@ export const Date = styled.h1`
   font-weight: 300;
 `;
 
+export const IconContainer = styled.div`
+  display: flex;
+  gap: 12px;
+`;
+
+export const Icon = styled.img`
+  width: 48px;
+  height: 48px;
+  /* cursor: pointer; */
+`;
+
 export const ButtonContainer = styled.div`
   display: flex;
   gap: 0.5rem;
