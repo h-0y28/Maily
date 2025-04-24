@@ -91,9 +91,11 @@ export default function DiaryComponent() {
       <S.Title>{diary.title}</S.Title>
 
       <S.ButtonContainer>
-        <S.EditButton onClick={() => navigate(`/diary/create/${diary.id}`)}>
-          수정
-        </S.EditButton>
+        {diary?.date && (
+          <S.EditButton onClick={() => navigate(`/diary/create/${diary.date}`)}>
+            수정
+          </S.EditButton>
+        )}
         |<S.DeleteButton onClick={deleteDiary}>삭제</S.DeleteButton>
       </S.ButtonContainer>
 
