@@ -148,7 +148,6 @@ const DiaryForm = () => {
 
   return (
     <S.FormContainer>
-      {/* <S.Pattern src={isEditing ? EditPattern : CreatePattern} /> */}
       <Container>
         <S.Header>
           <S.BackArrow onClick={goBack} src={BackArrow} />
