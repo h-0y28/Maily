@@ -19,7 +19,6 @@ export const Header = styled.div`
 export const Title = styled.h1`
   font-size: 1.5rem;
   font-weight: 500;
-  margin-bottom: 1rem;
   color: #333;
   text-align: center;
 
@@ -31,6 +30,7 @@ export const Title = styled.h1`
 export const ButtonContainer = styled.div`
   display: flex;
   gap: 0.5rem;
+  margin-bottom: 0.5rem;
   justify-content: flex-end;
   align-items: start;
 
@@ -105,6 +105,15 @@ export const DeleteButton = styled.button`
   }
 `;
 
+export const SubContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+
+  border-bottom: 1px solid ${theme.colors.primaryBrown};
+`;
+
 export const Date = styled.h1`
   text-align: center;
   font-size: 1rem;
@@ -121,15 +130,6 @@ export const Icon = styled.img`
   height: 2rem;
 `;
 
-export const MainContetn = styled.div`
-  display: flex;
-  justify-content: space-between;
-
-  padding-bottom: 1.25rem;
-
-  border-bottom: 1px solid ${theme.colors.primaryBrown};
-`;
-
 export const Content = styled.p`
   font-size: 1.5rem;
   font-weight: 600;
@@ -142,25 +142,3 @@ export const Content = styled.p`
     padding: 1rem 0rem;
   }
 `;
-
-// export const ImgWrapper = styled.div`
-//   display: grid;
-//   grid-template-columns: repeat(2, 1fr);
-//   gap: 1.5rem;
-
-//   @media (max-width: 768px) {
-//     grid-template-columns: 1fr;
-//   }
-// `;
-
-// export const Img = styled.img`
-//   width: 100%;
-//   height: 20rem;
-//   border-radius: 10px;
-//   object-fit: cover;
-//   transition: transform 0.5s ease;
-
-//   &:hover {
-//     transform: scale(1.02);
-//   }
-// `;
