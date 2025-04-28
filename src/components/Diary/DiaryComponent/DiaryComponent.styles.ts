@@ -45,7 +45,6 @@ export const EditButton = styled.button`
   background-color: transparent;
 
   font-size: 1rem;
-  border-radius: 5px;
   border: none;
   cursor: pointer;
   position: relative;
@@ -54,6 +53,7 @@ export const EditButton = styled.button`
     &::after {
       width: 100%;
     }
+    font-weight: 500;
   }
 
   &::after {
@@ -77,7 +77,6 @@ export const DeleteButton = styled.button`
   background-color: transparent;
 
   font-size: 1rem;
-  border-radius: 5px;
   border: none;
   cursor: pointer;
   position: relative;
@@ -86,6 +85,7 @@ export const DeleteButton = styled.button`
     &::after {
       width: 100%;
     }
+    font-weight: 500;
   }
 
   &::after {
