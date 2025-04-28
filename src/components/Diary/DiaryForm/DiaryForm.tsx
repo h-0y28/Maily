@@ -3,7 +3,9 @@ import * as S from "./DiaryForm.styles";
 import { useNavigate, useParams } from "react-router-dom";
 
 import BackArrow from "../../../assets/BackArrow.png";
-import CloseButton from "../../../assets/closeButton.png"; // 날씨, 기분 박스 닫기 버튼
+import CloseButton from "../../../assets/closeButton.png";
+import FillHeart from "../../../assets/FillHeartIcon.png";
+import EmptyHeartIcon from "../../../assets/EmptyHeartIcon.png";
 
 // 날씨 아이콘
 import WeathersIcon from "../../../assets/Weathers.png";
@@ -67,6 +69,7 @@ const DiaryForm = () => {
   const [content, setContent] = useState("");
   const [weather, setWeather] = useState<string>("");
   const [mood, setMood] = useState<string>("");
+  const [pick, setPick] = useState(false);
   const [visibleBox, setVisibleBox] = useState<"weather" | "mood" | null>(null);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -84,6 +87,7 @@ const DiaryForm = () => {
       setContent(diaryData.content);
       setWeather(diaryData.weather);
       setMood(diaryData.mood);
+      setPick(diaryData.pick || false);
       setIsEditing(true);
     } else {
       setIsEditing(false);
@@ -116,30 +120,27 @@ const DiaryForm = () => {
   };
 
   const handleSubmit = async () => {
-    const today = new Date().toISOString().split("T")[0];
+    if (!user || !date) return;
 
-    const diaryRef = doc(db, "diaries", `${user?.uid}_${today}`);
+    const diaryRef = doc(db, "diaries", `${user.uid}_${date}`);
+
+    const diaryData = {
+      title,
+      content,
+      weather,
+      mood,
+      pick,
+      userId: user.uid,
+      date,
+    };
 
     if (isEditing) {
-      await updateDoc(diaryRef, {
-        title,
-        content,
-        weather,
-        mood,
-        date,
-      });
+      await updateDoc(diaryRef, diaryData);
     } else {
-      await setDoc(diaryRef, {
-        title,
-        content,
-        weather,
-        mood,
-        userId: user?.uid,
-        date,
-      });
+      await setDoc(diaryRef, diaryData);
     }
 
-    navigate(`/diary/${today}`);
+    navigate(`/diary/${date}`);
   };
 
   if (loading) {
@@ -191,8 +192,13 @@ const DiaryForm = () => {
                 }
                 alt="날씨 아이콘"
               />
+              <S.Icon
+                src={pick ? FillHeart : EmptyHeartIcon}
+                onClick={() => setPick((prev) => !prev)}
+              />
             </S.IconContainer>
           </S.TitleAndIcons>
+
           <S.Content
             ref={contentRef}
             value={content}
@@ -205,7 +211,7 @@ const DiaryForm = () => {
         {/* 날씨 선택 상자 */}
         {visibleBox === "weather" && (
           <S.SelectionBox>
-            <S.SelectionLabel src={WeathersIcon}></S.SelectionLabel>
+            <S.SelectionLabel src={WeathersIcon} />
             <S.CloseButton
               onClick={() => setVisibleBox(null)}
               src={CloseButton}
@@ -227,7 +233,7 @@ const DiaryForm = () => {
         {/* 기분 선택 상자 */}
         {visibleBox === "mood" && (
           <S.SelectionBox>
-            <S.SelectionLabel src={FeelingsIcon}></S.SelectionLabel>
+            <S.SelectionLabel src={FeelingsIcon} />
             <S.CloseButton
               onClick={() => setVisibleBox(null)}
               src={CloseButton}
