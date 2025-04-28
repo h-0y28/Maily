@@ -16,8 +16,16 @@ export const Header = styled.div`
   width: 100%;
 `;
 
-export const BackArrow = styled.img`
-  cursor: pointer;
+export const Title = styled.h1`
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const Date = styled.h1`
@@ -121,18 +129,6 @@ export const MainContetn = styled.div`
   padding-bottom: 1.25rem;
 
   border-bottom: 1px solid ${theme.colors.primaryBrown};
-`;
-
-export const Title = styled.h1`
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #333;
-  text-align: center;
-
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-  }
 `;
 
 export const Content = styled.p`
