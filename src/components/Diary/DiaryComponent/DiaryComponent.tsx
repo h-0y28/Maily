@@ -144,8 +144,8 @@ export default function DiaryComponent() {
         |<S.DeleteButton onClick={deleteDiary}>삭제</S.DeleteButton>
       </S.ButtonContainer>
 
-      <S.MainContetn>
-        {/* 날씨 + 기분 */}
+      <S.SubContainer>
+        {/* 날짜 + 날씨 + 기분 */}
         <S.Date>{diary.date}</S.Date>
         <S.IconContainer>
           <S.Icon
@@ -164,7 +164,7 @@ export default function DiaryComponent() {
             }
           />
         </S.IconContainer>
-      </S.MainContetn>
+      </S.SubContainer>
 
       <S.Content>{diary.content}</S.Content>
     </S.Container>
