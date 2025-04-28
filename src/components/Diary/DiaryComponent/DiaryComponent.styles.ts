@@ -131,8 +131,8 @@ export const Icon = styled.img`
 `;
 
 export const Content = styled.p`
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 400;
   padding: 1.5rem 0rem;
   color: #555;
   white-space: pre-line;
