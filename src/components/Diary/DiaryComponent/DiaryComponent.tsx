@@ -6,6 +6,9 @@ import { db } from "../../auth/utils/firebaseConfig";
 import Loading from "../../Loading";
 import * as S from "./DiaryComponent.styles";
 
+import FillHeart from "../../../assets/FillHeartIcon.png";
+import EmptyHeartIcon from "../../../assets/EmptyHeartIcon.png";
+
 // 날씨 아이콘
 import WeathersIcon from "../../../assets/Weathers.png";
 import SunnyIcon from "../../../assets/SunnyIcon.png";
@@ -60,6 +63,7 @@ export interface Diary {
   imageUrl?: string;
   mood: string;
   weather: string;
+  pick: boolean;
 }
 
 export default function DiaryComponent() {
@@ -93,6 +97,7 @@ export default function DiaryComponent() {
           imageUrl: diaryData.imageUrl,
           mood: diaryData.mood,
           weather: diaryData.weather,
+          pick: diaryData.pick,
         });
       } else {
         setDiary(null);
@@ -163,6 +168,8 @@ export default function DiaryComponent() {
                 : WeathersIcon
             }
           />
+
+          <S.Icon src={diary.pick ? FillHeart : EmptyHeartIcon} />
         </S.IconContainer>
       </S.SubContainer>
 
