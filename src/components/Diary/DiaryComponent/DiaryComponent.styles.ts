@@ -17,8 +17,8 @@ export const Header = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 500;
   margin-bottom: 1rem;
   color: #333;
   text-align: center;
@@ -26,23 +26,6 @@ export const Title = styled.h1`
   @media (max-width: 768px) {
     font-size: 1.2rem;
   }
-`;
-
-export const Date = styled.h1`
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 400;
-`;
-
-export const IconContainer = styled.div`
-  display: flex;
-  gap: 12px;
-`;
-
-export const Icon = styled.img`
-  width: 48px;
-  height: 48px;
-  /* cursor: pointer; */
 `;
 
 export const ButtonContainer = styled.div`
@@ -120,6 +103,22 @@ export const DeleteButton = styled.button`
   @media (max-width: 768px) {
     font-size: 0.9rem;
   }
+`;
+
+export const Date = styled.h1`
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+`;
+
+export const IconContainer = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`;
+
+export const Icon = styled.img`
+  width: 2rem;
+  height: 2rem;
 `;
 
 export const MainContetn = styled.div`
