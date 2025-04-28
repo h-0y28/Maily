@@ -22,8 +22,8 @@ export const BackArrow = styled.img`
 
 export const Date = styled.h1`
   text-align: center;
-  font-size: 3rem;
-  font-weight: 300;
+  font-size: 1rem;
+  font-weight: 400;
 `;
 
 export const IconContainer = styled.div`
