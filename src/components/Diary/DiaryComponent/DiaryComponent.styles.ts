@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
 export const Container = styled.div`
-  padding: 1rem;
+  padding-right: 1rem;
   width: 100%;
   margin: 0 auto;
   @media (max-width: 768px) {

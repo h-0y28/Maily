@@ -22,33 +22,22 @@ export const CalendarHeader = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
-  gap: 1rem;
+  gap: 2rem;
 `;
 
 export const ArrowButton = styled.img`
   cursor: pointer;
-  width: 2rem;
   height: 2rem;
+  width: auto;
 `;
 
 export const YearMonth = styled.h1`
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: ${theme.colors.primaryRed};
   text-align: center;
 
   @media (max-width: ${breakpoints.mobile}) {
     font-size: 1.8rem;
-  }
-`;
-
-export const CalendarBody = styled.div`
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  width: 100%;
-  background-color: ${theme.colors.primaryYellow};
-
-  @media (max-width: ${breakpoints.mobile}) {
-    gap: 2px;
   }
 `;
 
@@ -69,6 +58,8 @@ export const DayOfWeekWrapper = styled.div`
 export const DayOfWeek = styled.div<{ index: number }>`
   text-align: center;
   font-weight: 600;
+  font-size: 1.5rem;
+
   color: ${({ index }) =>
     index === 0
       ? theme.colors.primaryRed
@@ -78,6 +69,17 @@ export const DayOfWeek = styled.div<{ index: number }>`
 
   @media (max-width: ${breakpoints.mobile}) {
     font-size: 1.2rem;
+  }
+`;
+
+export const CalendarBody = styled.div`
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  width: 100%;
+  background-color: ${theme.colors.primaryYellow};
+
+  @media (max-width: ${breakpoints.mobile}) {
+    gap: 2px;
   }
 `;
 
