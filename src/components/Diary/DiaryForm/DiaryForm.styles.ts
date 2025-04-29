@@ -168,8 +168,9 @@ export const CloseButton = styled.img`
   border: none;
   cursor: pointer;
   position: absolute;
-  margin-left: 1.3rem;
+  margin-left: 2.2rem;
   margin-top: 0.5rem;
+  width: 1.5rem;
 `;
 
 export const SelectionLabel = styled.img`
