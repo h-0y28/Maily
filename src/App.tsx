@@ -7,7 +7,7 @@ import Layout from "./layout/Layout";
 import Calendar from "./pages/CalendarPage";
 import DiaryPage from "./pages/DiaryPage";
 import CreateDiaryPage from "./pages/CreateDiaryPage/CreateDiaryPage";
-import EditDiaryPage from "./pages/EditDiaryPage";
+// import EditDiaryPage from "./pages/EditDiaryPage";
 import FaqPage from "./pages/FaqPage";
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
           <Route path="calendar" element={<Calendar />} />
           <Route path="/diary/:date" element={<DiaryPage />} />
           <Route path="/diary/create/:date" element={<CreateDiaryPage />} />
-          <Route path="/diary/edit/:date" element={<EditDiaryPage />} />
+          {/* <Route path="/diary/edit/:date" element={<EditDiaryPage />} /> */}
 
           {/* 기타 페이지 */}
           {/* <Route path="pick" element={<PickPage />} /> */}
