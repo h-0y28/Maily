@@ -146,7 +146,7 @@ export default function DiaryComponent() {
             수정
           </S.EditButton>
         )}
-        |<S.DeleteButton onClick={deleteDiary}>삭제</S.DeleteButton>
+        <S.DeleteButton onClick={deleteDiary}>삭제</S.DeleteButton>
       </S.ButtonContainer>
 
       <S.SubContainer>
