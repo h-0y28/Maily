@@ -1,3 +1,4 @@
+import * as S from "./PickPage.styles";
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../components/auth/utils/firebaseConfig";
@@ -72,9 +73,13 @@ export default function Pick() {
       <ul>
         {pickDiaries.map((diary) => (
           <li key={diary.id}>
-            <h2>{diary.title}</h2>
-            <p>{diary.date}</p>
-            <p>{diary.content}</p>
+            <S.Card>
+              <S.CardHeader>
+                <S.CardTitle>{diary.title}</S.CardTitle>
+                <S.CardDate>{diary.date}</S.CardDate>
+              </S.CardHeader>
+              <S.CardContent>{diary.content}</S.CardContent>
+            </S.Card>
           </li>
         ))}
       </ul>
