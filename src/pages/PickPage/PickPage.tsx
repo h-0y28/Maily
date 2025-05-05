@@ -68,9 +68,9 @@ export default function Pick() {
   }
 
   return (
-    <div>
-      <h1>Pick한 다이어리 목록</h1>
-      <ul>
+    <S.PcikPageContainer>
+      <S.PickPageTitle>Pick한 다이어리 목록</S.PickPageTitle>
+      <S.CardContainer>
         {pickDiaries.map((diary) => (
           <li key={diary.id}>
             <S.Card>
@@ -82,7 +82,7 @@ export default function Pick() {
             </S.Card>
           </li>
         ))}
-      </ul>
-    </div>
+      </S.CardContainer>
+    </S.PcikPageContainer>
   );
 }

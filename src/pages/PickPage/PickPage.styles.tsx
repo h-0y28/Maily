@@ -1,6 +1,22 @@
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
 
+export const PcikPageContainer = styled.div``;
+
+export const PickPageTitle = styled.h1`
+  font-size: 2rem;
+  font-weight: 700;
+  color: ${theme.colors.primaryBlack};
+  margin-bottom: 2rem;
+`;
+
+export const CardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+`;
+
+// card 관련 스타일
 export const Card = styled.div`
   background-color: ${theme.colors.primaryWhite};
   padding: 2rem;
