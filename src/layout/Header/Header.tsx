@@ -49,7 +49,7 @@ const Header = () => {
             >
               다이어리
             </S.NavItem>
-            {/* <S.NavItem onClick={() => navigate("/pick")}>Pick</S.NavItem> */}
+            <S.NavItem onClick={() => navigate("/pick")}>다이어픽</S.NavItem>
             <S.NavItem onClick={() => navigate("/profile")}>프로필</S.NavItem>
             <S.LogoutButton onClick={logout}>로그아웃</S.LogoutButton>
           </>
