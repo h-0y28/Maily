@@ -40,22 +40,24 @@ const Header = () => {
                 )
               }
             >
-              다이어리 작성
+              Write
             </S.NavItem>
             <S.NavItem
               onClick={() =>
                 navigate(`/diary/${new Date().toISOString().split("T")[0]}`)
               }
             >
-              다이어리
+              Diary
             </S.NavItem>
-            <S.NavItem onClick={() => navigate("/pick")}>다이어픽</S.NavItem>
-            <S.NavItem onClick={() => navigate("/profile")}>프로필</S.NavItem>
-            <S.LogoutButton onClick={logout}>로그아웃</S.LogoutButton>
+            <S.NavItem onClick={() => navigate("/pick")}>Pick</S.NavItem>
+            <S.NavItem onClick={() => navigate("/profile")}>
+              My Profile
+            </S.NavItem>
+            <S.LogoutButton onClick={logout}>Log out</S.LogoutButton>
           </>
         ) : (
           // 로그인 안 됐을 때
-          <S.LoginButton onClick={login}>로그인</S.LoginButton>
+          <S.LoginButton onClick={login}>Log in</S.LoginButton>
         )}
       </S.Nav>
     </S.HeaderWrapper>
