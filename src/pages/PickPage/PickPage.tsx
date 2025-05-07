@@ -2,8 +2,9 @@ import * as S from "./PickPage.styles";
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../components/auth/utils/firebaseConfig";
-import { getAuth } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Loading from "../../components/Loading";
+import { Container } from "../../styles/commonStyles";
 
 type DiaryType = {
   id: string;
@@ -19,12 +20,14 @@ type DiaryType = {
 export default function Pick() {
   const [pickDiaries, setPickDiaries] = useState<DiaryType[]>([]);
   const [loading, setLoading] = useState(true);
-  const user = getAuth().currentUser;
 
   useEffect(() => {
-    const fetchPickDiaries = async () => {
+    const auth = getAuth();
+
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (!user) {
         console.error("User is missing!");
+        setLoading(false);
         return;
       }
 
@@ -56,23 +59,26 @@ export default function Pick() {
       } finally {
         setLoading(false);
       }
-    };
+    });
 
-    fetchPickDiaries();
-  }, [user]);
+    return () => unsubscribe(); // 컴포넌트 언마운트 시 구독 해제
+  }, []);
 
   if (loading) return <Loading />;
-
-  if (pickDiaries.length === 0) {
-    return <p>Pick된 다이어리가 없습니다.</p>;
-  }
+  if (pickDiaries.length === 0) return <p>Pick된 다이어리가 없습니다.</p>;
 
   return (
-    <S.PcikPageContainer>
-      <S.PickPageTitle>Pick한 다이어리 목록</S.PickPageTitle>
+    <Container>
+      <S.Header>
+        <S.Title>PICK 다이어리</S.Title>
+        <S.InfoBox>
+          <S.Description>PICK 한 추억들을 한눈에 볼 수 있어요!</S.Description>
+        </S.InfoBox>
+      </S.Header>
+
       <S.CardContainer>
         {pickDiaries.map((diary) => (
-          <li key={diary.id}>
+          <span key={diary.id}>
             <S.Card>
               <S.CardHeader>
                 <S.CardTitle>{diary.title}</S.CardTitle>
@@ -80,9 +86,9 @@ export default function Pick() {
               </S.CardHeader>
               <S.CardContent>{diary.content}</S.CardContent>
             </S.Card>
-          </li>
+          </span>
         ))}
       </S.CardContainer>
-    </S.PcikPageContainer>
+    </Container>
   );
 }
