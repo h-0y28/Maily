@@ -142,7 +142,7 @@ export default function DiaryComponent() {
 
       <S.ButtonContainer>
         {diary?.date && (
-          <S.EditButton onClick={() => navigate(`/diary/create/${diary.date}`)}>
+          <S.EditButton onClick={() => navigate(`/diary/form/${diary.date}`)}>
             수정
           </S.EditButton>
         )}

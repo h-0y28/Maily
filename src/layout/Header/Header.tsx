@@ -36,7 +36,7 @@ const Header = () => {
             <S.NavItem
               onClick={() =>
                 navigate(
-                  `/diary/create/${new Date().toISOString().split("T")[0]}`
+                  `/diary/form/${new Date().toISOString().split("T")[0]}`
                 )
               }
             >

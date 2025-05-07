@@ -21,7 +21,7 @@ const App = () => {
           {/* 다이어리 관련 페이지 */}
           <Route path="calendar" element={<Calendar />} />
           <Route path="/diary/:date" element={<DiaryPage />} />
-          <Route path="/diary/create/:date" element={<CreateDiaryPage />} />
+          <Route path="/diary/form/:date" element={<CreateDiaryPage />} />
           {/* <Route path="/diary/edit/:date" element={<EditDiaryPage />} /> */}
 
           {/* 기타 페이지 */}
