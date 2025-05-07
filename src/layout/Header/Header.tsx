@@ -50,9 +50,6 @@ const Header = () => {
               Diary
             </S.NavItem>
             <S.NavItem onClick={() => navigate("/pick")}>Pick</S.NavItem>
-            <S.NavItem onClick={() => navigate("/profile")}>
-              My Profile
-            </S.NavItem>
             <S.LogoutButton onClick={logout}>Log out</S.LogoutButton>
           </>
         ) : (
