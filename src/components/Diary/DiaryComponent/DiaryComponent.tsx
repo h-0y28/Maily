@@ -116,6 +116,7 @@ export default function DiaryComponent() {
   }, [user, date]);
 
   const deleteDiary = async () => {
+    console.log("Deleting diary:", diary);
     if (!diary) return;
 
     try {
