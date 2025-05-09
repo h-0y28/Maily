@@ -16,11 +16,9 @@ export const EmptyContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  padding: 8rem;
-  padding-left: 7rem;
-  padding-right: 7rem;
+  padding: 8rem 0;
 
-  border: 2px solid ${theme.colors.primaryBrown};
+  background-color: ${theme.colors.primaryWhite};
   border-radius: 2rem;
 
   width: 100%;
