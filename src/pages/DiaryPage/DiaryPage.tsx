@@ -63,7 +63,7 @@ const DiaryPage = () => {
         ) : (
           <S.EmptyContainer>
             <S.EmptyAlarm>다이어리가 비어있습니다.</S.EmptyAlarm>
-            <S.CreateButton onClick={() => navigate(`/diary/create/${date}`)}>
+            <S.CreateButton onClick={() => navigate(`/diary/form/${date}`)}>
               다이어리 작성하러 가기 →
             </S.CreateButton>
           </S.EmptyContainer>
