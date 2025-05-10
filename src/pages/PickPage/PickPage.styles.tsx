@@ -57,10 +57,15 @@ export const Card = styled.div`
 
 export const CardHeader = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   padding-bottom: 0.5rem;
   border-bottom: 3px solid ${theme.colors.primaryBrown};
   color: ${theme.colors.primaryBlack};
+`;
+
+export const TitleAndDate = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const CardTitle = styled.h2`
@@ -71,6 +76,15 @@ export const CardTitle = styled.h2`
 
 export const CardDate = styled.p`
   font-size: 1rem;
+`;
+
+export const IconContainer = styled.div`
+  display: flex;
+`;
+
+export const Icon = styled.img`
+  width: 2rem;
+  height: 2rem;
 `;
 
 export const CardContent = styled.p`
