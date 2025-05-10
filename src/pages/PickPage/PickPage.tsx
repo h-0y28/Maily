@@ -81,8 +81,10 @@ export default function Pick() {
           <span key={diary.id}>
             <S.Card>
               <S.CardHeader>
-                <S.CardTitle>{diary.title}</S.CardTitle>
-                <S.CardDate>{diary.date}</S.CardDate>
+                <S.TitleAndDate>
+                  <S.CardTitle>{diary.title}</S.CardTitle>
+                  <S.CardDate>{diary.date}</S.CardDate>
+                </S.TitleAndDate>
               </S.CardHeader>
               <S.CardContent>{diary.content}</S.CardContent>
             </S.Card>
