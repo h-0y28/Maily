@@ -40,20 +40,21 @@ export const TitleAndDate = styled.div`
 export const CardTitle = styled.h2`
   font-size: 1.5rem;
   font-weight: 700;
-  padding-bottom: 0.5rem;
 `;
 
 export const CardDate = styled.p`
-  font-size: 1rem;
+  font-size: 0.5rem;
 `;
 
 export const IconContainer = styled.div`
   display: flex;
+  align-items: center;
+  gap: 0.5rem;
 `;
 
 export const Icon = styled.img`
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: auto;
 `;
 
 export const CardContent = styled.p`
