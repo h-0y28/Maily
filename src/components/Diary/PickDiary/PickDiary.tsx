@@ -121,27 +121,26 @@ export default function PickDiary() {
               <S.TitleAndDate>
                 <S.CardTitle>{diary.title}</S.CardTitle>
                 <S.CardDate>{diary.date}</S.CardDate>
-                <S.IconContainer>
-                  <S.Icon
-                    src={
-                      diary.mood
-                        ? moodIcons.find((icon) => icon.value === diary.mood)
-                            ?.src
-                        : FeelingsIcon
-                    }
-                  />
-
-                  <S.Icon
-                    src={
-                      diary.weather
-                        ? weatherIcons.find(
-                            (icon) => icon.value === diary.weather
-                          )?.src
-                        : WeathersIcon
-                    }
-                  />
-                </S.IconContainer>
               </S.TitleAndDate>
+              <S.IconContainer>
+                <S.Icon
+                  src={
+                    diary.mood
+                      ? moodIcons.find((icon) => icon.value === diary.mood)?.src
+                      : FeelingsIcon
+                  }
+                />
+
+                <S.Icon
+                  src={
+                    diary.weather
+                      ? weatherIcons.find(
+                          (icon) => icon.value === diary.weather
+                        )?.src
+                      : WeathersIcon
+                  }
+                />
+              </S.IconContainer>
             </S.CardHeader>
             <S.CardContent>{diary.content}</S.CardContent>
           </S.Card>
