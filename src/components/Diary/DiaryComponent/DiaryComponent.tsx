@@ -133,48 +133,58 @@ export default function DiaryComponent() {
     return <Loading />;
   }
 
-  if (!diary) {
-    return <p>다이어리를 찾을 수 없습니다.</p>;
-  }
-
   return (
-    <S.Container>
-      <S.Title>{diary.title}</S.Title>
+    <S.DiaryConponentContainer>
+      {diary ? (
+        <S.Container>
+          <S.Title>{diary.title}</S.Title>
 
-      <S.ButtonContainer>
-        {diary?.date && (
-          <S.EditButton onClick={() => navigate(`/diary/form/${diary.date}`)}>
-            수정
-          </S.EditButton>
-        )}
-        <S.DeleteButton onClick={deleteDiary}>삭제</S.DeleteButton>
-      </S.ButtonContainer>
+          <S.ButtonContainer>
+            {diary?.date && (
+              <S.EditButton
+                onClick={() => navigate(`/diary/form/${diary.date}`)}
+              >
+                수정
+              </S.EditButton>
+            )}
+            <S.DeleteButton onClick={deleteDiary}>삭제</S.DeleteButton>
+          </S.ButtonContainer>
 
-      <S.SubContainer>
-        {/* 날짜 + 날씨 + 기분 */}
-        <S.Date>{diary.date}</S.Date>
-        <S.IconContainer>
-          <S.Icon
-            src={
-              diary.mood
-                ? moodIcons.find((icon) => icon.value === diary.mood)?.src
-                : FeelingsIcon
-            }
-          />
+          <S.SubContainer>
+            {/* 날짜 + 날씨 + 기분 */}
+            <S.Date>{diary.date}</S.Date>
+            <S.IconContainer>
+              <S.Icon
+                src={
+                  diary.mood
+                    ? moodIcons.find((icon) => icon.value === diary.mood)?.src
+                    : FeelingsIcon
+                }
+              />
 
-          <S.Icon
-            src={
-              diary.weather
-                ? weatherIcons.find((icon) => icon.value === diary.weather)?.src
-                : WeathersIcon
-            }
-          />
+              <S.Icon
+                src={
+                  diary.weather
+                    ? weatherIcons.find((icon) => icon.value === diary.weather)
+                        ?.src
+                    : WeathersIcon
+                }
+              />
 
-          <S.Icon src={diary.pick ? FillHeart : EmptyHeartIcon} />
-        </S.IconContainer>
-      </S.SubContainer>
+              <S.Icon src={diary.pick ? FillHeart : EmptyHeartIcon} />
+            </S.IconContainer>
+          </S.SubContainer>
 
-      <S.Content>{diary.content}</S.Content>
-    </S.Container>
+          <S.Content>{diary.content}</S.Content>
+        </S.Container>
+      ) : (
+        <S.EmptyContainer>
+          <S.EmptyAlarm>다이어리가 비어있습니다.</S.EmptyAlarm>
+          <S.CreateButton onClick={() => navigate(`/diary/form/${date}`)}>
+            다이어리 작성하러 가기 →
+          </S.CreateButton>
+        </S.EmptyContainer>
+      )}
+    </S.DiaryConponentContainer>
   );
 }

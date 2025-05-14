@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
+export const DiaryConponentContainer = styled.div``;
+
 export const Container = styled.div`
   padding-right: 1rem;
-  width: 100%;
   margin: 0 auto;
   @media (max-width: 768px) {
     padding: 0.5rem;
@@ -140,4 +141,38 @@ export const Content = styled.p`
     font-size: 0.9rem;
     padding: 1rem 0rem;
   }
+`;
+
+export const EmptyContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8rem 0;
+
+  background-color: ${theme.colors.primaryWhite};
+  border-radius: 2rem;
+
+  width: 100%;
+  height: fit-content;
+
+  margin: auto;
+`;
+
+export const EmptyAlarm = styled.h1`
+  font-size: 2rem;
+  font-weight: 600;
+  color: ${theme.colors.primaryBlack};
+`;
+
+export const CreateButton = styled.button`
+  font-size: 1.5rem;
+  text-decoration: underline;
+  color: ${theme.colors.primaryRed};
+  border: none;
+
+  background-color: transparent;
+  cursor: pointer;
 `;
