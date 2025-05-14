@@ -17,7 +17,7 @@ export const Header = styled.div`
 
 export const Title = styled.h1`
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 700;
   color: #333;
   text-align: center;
 
