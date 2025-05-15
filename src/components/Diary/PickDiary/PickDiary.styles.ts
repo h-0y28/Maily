@@ -63,7 +63,5 @@ export const CardContent = styled.p`
   font-weight: 600;
 
   line-height: 1.5;
-  padding-top: 3rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-top: 0.5rem;
 `;
