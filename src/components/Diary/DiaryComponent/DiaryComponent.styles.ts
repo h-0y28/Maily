@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
-export const DiaryConponentContainer = styled.div``;
+export const DiaryConponentContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
 export const Container = styled.div`
   padding-right: 1rem;
