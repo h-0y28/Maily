@@ -155,7 +155,7 @@ const DiaryForm = () => {
           <S.Description>
             {isEditing ? "다이어리 수정" : "당신의 추억을 기록해보세요!"}
           </S.Description>
-          <p>{date}</p>
+          <S.Date>{date}</S.Date>
         </S.Header>
 
         {/* 입력 폼 */}

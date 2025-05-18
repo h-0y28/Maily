@@ -38,6 +38,11 @@ export const Description = styled.h1`
   text-align: center;
 `;
 
+export const Date = styled.p`
+  padding-right: 1rem;
+  align-content: center;
+`;
+
 // Form 내부 요소들
 export const FormWrapper = styled.div`
   padding: 1.5rem 4rem;
