@@ -1,22 +1,12 @@
 import styled from "styled-components";
 import { theme } from "../../../styles/theme";
 
-export const DiaryConponentContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const Container = styled.div`
+export const DiaryContainer = styled.div`
   padding-right: 1rem;
-  margin: 0 auto;
+  margin: 0;
   @media (max-width: 768px) {
     padding: 0.5rem;
   }
-`;
-
-export const Header = styled.div`
-  display: flex;
-  width: 100%;
 `;
 
 export const Title = styled.h1`
@@ -47,7 +37,6 @@ export const ButtonContainer = styled.div`
 export const EditButton = styled.button`
   color: ${theme.colors.primaryBlue};
   background-color: transparent;
-
   font-size: 1rem;
   border: none;
   cursor: pointer;
@@ -79,7 +68,6 @@ export const EditButton = styled.button`
 export const DeleteButton = styled.button`
   color: ${theme.colors.primaryRed};
   background-color: transparent;
-
   font-size: 1rem;
   border: none;
   cursor: pointer;
@@ -113,7 +101,6 @@ export const SubContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-bottom: 0.5rem;
-
   border-bottom: 1px solid ${theme.colors.primaryBrown};
 `;
 
@@ -152,30 +139,25 @@ export const EmptyContainer = styled.div`
   gap: 1rem;
   align-items: center;
   justify-content: center;
-
-  padding: 8rem 0;
-
-  background-color: ${theme.colors.primaryWhite};
-  border-radius: 2rem;
-
   width: 100%;
-  height: fit-content;
-
-  margin: auto;
+  height: 60vh;
 `;
 
-export const EmptyAlarm = styled.h1`
-  font-size: 2rem;
-  font-weight: 600;
-  color: ${theme.colors.primaryBlack};
+export const EmptyAlarm = styled.p`
+  font-size: 1.1rem;
+  color: ${theme.colors.primaryGray};
 `;
 
 export const CreateButton = styled.button`
-  font-size: 1.5rem;
-  text-decoration: underline;
-  color: ${theme.colors.primaryRed};
+  background-color: ${theme.colors.primaryBlue};
+  color: white;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
   border: none;
-
-  background-color: transparent;
+  border-radius: 0.5rem;
   cursor: pointer;
+
+  &:hover {
+    background-color: ${theme.colors.primaryBlue};
+  }
 `;

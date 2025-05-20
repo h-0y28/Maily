@@ -116,7 +116,6 @@ export default function DiaryComponent() {
   }, [user, date]);
 
   const deleteDiary = async () => {
-    console.log("Deleting diary:", diary);
     if (!diary) return;
 
     try {
@@ -134,9 +133,9 @@ export default function DiaryComponent() {
   }
 
   return (
-    <S.DiaryConponentContainer>
+    <>
       {diary ? (
-        <S.Container>
+        <S.DiaryContainer>
           <S.Title>{diary.title}</S.Title>
 
           <S.ButtonContainer>
@@ -151,7 +150,6 @@ export default function DiaryComponent() {
           </S.ButtonContainer>
 
           <S.SubContainer>
-            {/* 날짜 + 날씨 + 기분 */}
             <S.Date>{diary.date}</S.Date>
             <S.IconContainer>
               <S.Icon
@@ -161,7 +159,6 @@ export default function DiaryComponent() {
                     : FeelingsIcon
                 }
               />
-
               <S.Icon
                 src={
                   diary.weather
@@ -170,13 +167,12 @@ export default function DiaryComponent() {
                     : WeathersIcon
                 }
               />
-
               <S.Icon src={diary.pick ? FillHeart : EmptyHeartIcon} />
             </S.IconContainer>
           </S.SubContainer>
 
           <S.Content>{diary.content}</S.Content>
-        </S.Container>
+        </S.DiaryContainer>
       ) : (
         <S.EmptyContainer>
           <S.EmptyAlarm>다이어리가 비어있습니다.</S.EmptyAlarm>
@@ -185,6 +181,6 @@ export default function DiaryComponent() {
           </S.CreateButton>
         </S.EmptyContainer>
       )}
-    </S.DiaryConponentContainer>
+    </>
   );
 }
