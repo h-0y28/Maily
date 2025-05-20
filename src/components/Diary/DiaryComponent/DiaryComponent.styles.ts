@@ -139,25 +139,28 @@ export const EmptyContainer = styled.div`
   gap: 1rem;
   align-items: center;
   justify-content: center;
+  padding: 8rem 0;
+
+  background-color: ${theme.colors.primaryWhite};
+  border-radius: 2rem;
+
   width: 100%;
-  height: 60vh;
+  height: fit-content;
+
+  margin: auto;
 `;
 
 export const EmptyAlarm = styled.p`
-  font-size: 1.1rem;
-  color: ${theme.colors.primaryGray};
+  font-size: 2rem;
+  font-weight: 600;
+  color: ${theme.colors.primaryBlack};
 `;
 
 export const CreateButton = styled.button`
-  background-color: ${theme.colors.primaryBlue};
-  color: white;
-  font-size: 1rem;
-  padding: 0.6rem 1.2rem;
+  font-size: 1.5rem;
+  text-decoration: underline;
+  color: ${theme.colors.primaryRed};
   border: none;
-  border-radius: 0.5rem;
+  background-color: transparent;
   cursor: pointer;
-
-  &:hover {
-    background-color: ${theme.colors.primaryBlue};
-  }
 `;
