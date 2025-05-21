@@ -150,7 +150,7 @@ export const EmptyContainer = styled.div`
   margin: auto;
 `;
 
-export const EmptyAlarm = styled.p`
+export const EmptyText = styled.p`
   font-size: 2rem;
   font-weight: 600;
   color: ${theme.colors.primaryBlack};

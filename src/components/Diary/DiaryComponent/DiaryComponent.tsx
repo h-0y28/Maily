@@ -175,7 +175,7 @@ export default function DiaryComponent() {
         </S.DiaryContainer>
       ) : (
         <S.EmptyContainer>
-          <S.EmptyAlarm>다이어리가 비어있습니다.</S.EmptyAlarm>
+          <S.EmptyText>다이어리가 비어있습니다.</S.EmptyText>
           <S.CreateButton onClick={() => navigate(`/diary/form/${date}`)}>
             다이어리 작성하러 가기 →
           </S.CreateButton>
