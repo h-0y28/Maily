@@ -6,8 +6,6 @@ import Layout from "./layout/Layout";
 import Calendar from "./pages/CalendarPage";
 import DiaryPage from "./pages/DiaryPage";
 import CreateDiaryPage from "./pages/CreateDiaryPage/CreateDiaryPage";
-// import EditDiaryPage from "./pages/EditDiaryPage";
-import FaqPage from "./pages/FaqPage";
 
 const App = () => {
   return (
@@ -26,7 +24,6 @@ const App = () => {
 
           {/* 기타 페이지 */}
           <Route path="pick" element={<PickPage />} />
-          <Route path="faqPage" element={<FaqPage />} />
         </Route>
 
         {/* 404 페이지 (공통 레이아웃 제외) */}
