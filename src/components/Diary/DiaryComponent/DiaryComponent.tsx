@@ -150,7 +150,8 @@ export default function DiaryComponent() {
           </S.ButtonContainer>
 
           <S.SubContainer>
-            <S.Date>{diary.date}</S.Date>
+            <S.Date>{diary.date.split("-").join(".")}</S.Date>
+
             <S.IconContainer>
               <S.Icon
                 src={
