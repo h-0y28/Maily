@@ -56,6 +56,7 @@ const Footer = () => {
                   key={idx}
                   href={item.url}
                   rel="noopener noreferrer"
+                  target={item.url.includes("github.com") ? "_blank" : "_self"}
                 >
                   {item.text}
                 </S.LinkContent>
