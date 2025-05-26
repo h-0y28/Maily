@@ -18,7 +18,17 @@ const Footer = () => {
     },
     {
       title: "Quick Link",
-      content: [{ text: "FAQ", url: "/faqPage" }],
+      content: [
+        {
+          text: "Write",
+          url: `/diary/form/${new Date().toISOString().split("T")[0]}`,
+        },
+        {
+          text: "Diary",
+          url: `/diary/${new Date().toISOString().split("T")[0]}`,
+        },
+        { text: "Pick", url: "/pick" },
+      ],
     },
     {
       title: "Contact",
@@ -45,7 +55,6 @@ const Footer = () => {
                 <S.LinkContent
                   key={idx}
                   href={item.url}
-                  target={item.url.startsWith("mailto:") ? "_self" : "_blank"}
                   rel="noopener noreferrer"
                 >
                   {item.text}
