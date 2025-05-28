@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { auth, provider } from "./firebaseConfig";
 import { signInWithPopup, onAuthStateChanged, User } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const useAuth = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -12,11 +13,11 @@ const useAuth = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       setUser(result.user);
+      toast.success("로그인 성공");
     } catch (error) {
       console.error("Login error:", error);
+      toast.error("로그인 실패");
     }
-    // navigate("/home");
-    navigate("/");
   };
 
   // 로그아웃 함수
@@ -24,10 +25,12 @@ const useAuth = () => {
     try {
       await auth.signOut();
       setUser(null);
+      toast.success("로그아웃 성공");
+      navigate("/");
     } catch (error) {
       console.error("Logout error:", error);
+      toast.error("로그아웃 실패");
     }
-    navigate("/"); // intro page
   };
 
   // 유저 상태 추적
