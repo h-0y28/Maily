@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import Pattern from "../../../assets/welcomePattern.svg";
-import LoginButton from "../../auth/LoginButton";
 import * as S from "./Welcome.styles";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "../../auth/utils/firebaseConfig";
+import useAuth from "../../auth/utils/authFunctions";
 // import { useNavigate } from "react-router-dom";
 
 const Welcome = () => {
   // const navgatie = useNavigate();
 
   const [user, setUser] = useState<User | null>(null);
+  const { login } = useAuth();
 
   // 로그인 상태 추적
   useEffect(() => {
@@ -40,7 +41,9 @@ const Welcome = () => {
           <>
             {/* 로그인 안 됐을 때 */}
             <S.LoginPhrase>로그인 후 Maily를 이용해 보세요! ↓</S.LoginPhrase>
-            <LoginButton />
+            <S.ButtonContainer onClick={login}>
+              Google로 로그인
+            </S.ButtonContainer>
           </>
         )}
       </S.ContentContainer>
