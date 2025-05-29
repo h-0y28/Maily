@@ -32,8 +32,3 @@ export const Content = styled.div`
   line-height: 1.8;
   display: flex;
 `;
-
-export const TextHightLight = styled.p`
-  text-decoration: underline;
-  display: flex;
-`;
