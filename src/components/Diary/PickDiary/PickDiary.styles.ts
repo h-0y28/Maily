@@ -5,6 +5,8 @@ export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+
+  padding: 0 6.25rem;
 `;
 
 // card 관련 스타일
