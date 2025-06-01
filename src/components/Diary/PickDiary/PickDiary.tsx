@@ -120,7 +120,7 @@ export default function PickDiary() {
             <S.CardHeader>
               <S.TitleAndDate>
                 <S.CardTitle>{diary.title}</S.CardTitle>
-                <S.CardDate>{diary.date}</S.CardDate>
+                <S.CardDate>{diary.date.split("-").join(".")}</S.CardDate>
               </S.TitleAndDate>
               <S.IconContainer>
                 <S.Icon
