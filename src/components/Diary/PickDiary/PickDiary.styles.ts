@@ -41,7 +41,7 @@ export const TitleAndDate = styled.div`
 
 export const CardTitle = styled.h2`
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
 `;
 
 export const CardDate = styled.p`
