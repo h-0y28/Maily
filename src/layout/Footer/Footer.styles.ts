@@ -11,6 +11,11 @@ export const FooterContainer = styled.footer`
   border-top: 2px solid ${theme.colors.primaryRed};
   color: ${theme.colors.primaryBrown};
   background-color: ${theme.colors.primaryBackground};
+
+  @media (max-width: 1024px) {
+    padding: 2rem 0;
+    text-align: center;
+  }
 `;
 
 export const SectionWrapper = styled.div`
@@ -19,6 +24,12 @@ export const SectionWrapper = styled.div`
   gap: 15rem;
   width: 100%;
   margin-bottom: 2.5rem;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
 `;
 
 export const SectionContainer = styled.div`
@@ -28,7 +39,7 @@ export const SectionContainer = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 700;
+  font-size: 1.5rem;
   font-weight: 500;
 `;
 
