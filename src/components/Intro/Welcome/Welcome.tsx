@@ -1,45 +1,29 @@
 import { useEffect, useState } from "react";
-import Pattern from "../../../assets/welcomePattern.svg";
-import * as S from "./Welcome.styles";
 import { onAuthStateChanged, User } from "firebase/auth";
+
+import Pattern from "../../../assets/welcomePattern.svg";
 import { auth } from "../../auth/utils/firebaseConfig";
 import useAuth from "../../auth/utils/authFunctions";
-// import { useNavigate } from "react-router-dom";
+import * as S from "./Welcome.styles";
 
 const Welcome = () => {
-  // const navgatie = useNavigate();
-
   const [user, setUser] = useState<User | null>(null);
   const { login } = useAuth();
 
-  // 로그인 상태 추적
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser);
-      } else {
-        setUser(null);
-      }
-    });
-
+    const unsubscribe = onAuthStateChanged(auth, setUser);
     return () => unsubscribe();
   }, []);
 
   return (
     <S.WelcomeContainer>
-      <S.Pattern src={Pattern} />
+      <S.Pattern src={Pattern} alt="Welcome background pattern" />
       <S.ContentContainer>
         <S.Title>Welcome to Maily :)</S.Title>
         <S.WelcomePhrase>당신의 매일을 기록하세요.</S.WelcomePhrase>
-        {user ? (
-          // 로그인 됐을 때
-          // <S.HomeButton onClick={() => navgatie("/home")}>
-          //   홈으로 가기
-          // </S.HomeButton>
-          <></>
-        ) : (
+
+        {!user && (
           <>
-            {/* 로그인 안 됐을 때 */}
             <S.LoginPhrase>로그인 후 Maily를 이용해 보세요! ↓</S.LoginPhrase>
             <S.ButtonContainer onClick={login}>
               Google로 로그인
