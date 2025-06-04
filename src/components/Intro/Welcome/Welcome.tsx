@@ -25,9 +25,7 @@ const Welcome = () => {
         {!user && (
           <>
             <S.LoginPhrase>로그인 후 Maily를 이용해 보세요! ↓</S.LoginPhrase>
-            <S.ButtonContainer onClick={login}>
-              Google로 로그인
-            </S.ButtonContainer>
+            <S.ButtonContainer onClick={login}>로그인</S.ButtonContainer>
           </>
         )}
       </S.ContentContainer>
