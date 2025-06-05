@@ -122,7 +122,7 @@ export default function DiaryComponent() {
       const diaryRef = doc(db, "diaries", diary.id);
       await deleteDoc(diaryRef);
       setDiary(null);
-      navigate("/diary");
+      navigate(`/diary/${diary.date}`);
     } catch (error) {
       console.error("Error deleting diary:", error);
     }
